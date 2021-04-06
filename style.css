@@ -1,0 +1,584 @@
+* {
+    /* border-width: 2px !important;
+    border-color: #3f3f3f !important; */
+    color: #3f3f3f;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+ /* global css */
+
+body {
+    /* margin: 0 8px; */
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+.section_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin-top: 2%;
+}
+
+/* Message Box Section */
+
+
+.accordion_section {
+    position: absolute;
+    top:30%;
+    left: 5%;
+    display: flex;
+    flex: 1;
+    margin: 0 0 0 100px;
+    
+
+}
+#messageBox {
+    position: relative;
+    margin: 0;
+    /* bottom:50%; */
+    /* left: 5%; */
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    width: 40%;
+}
+#step1,
+#step2,
+#step3,
+#step4,
+#step5,
+#step6,
+#step7{
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #3f3f3f;
+}
+
+          /* animation */
+
+
+
+
+        /* Message Box Section End */
+
+
+        /* Flow Chart Section */
+ 
+.flow_chart_sec{
+    position: absolute;
+    margin: 0;
+    top:30%;
+    right: 10%;
+    display: flex;
+    width: 40%;
+    height: 70vh;
+    
+}
+.flow_chart {
+    transform: scale(.9);
+}
+.animatable_chart {
+    z-index: 15;
+}
+.BgBlue {
+    background: #B7D3FE;
+}
+.BgPink {
+    background: #FFCCCC;
+}
+.hide {
+    background: transparent!important;
+    color: transparent!important;
+}
+
+        /* right side bar----step one */
+
+.arrow_dwn1 {
+    position: absolute;
+    left: 525px;
+    top: 1025px;
+    height: 60px;
+    width: 70px;
+    transform: rotate(-90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.r_bb7 {
+    position: absolute;
+    left: 415px;
+    top: 980px;
+    height: 40px;
+    width: 275px;
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: 600;
+}
+.data_in_arrow {
+    position: absolute;
+    left: 575px;
+    top: 902px;
+    height: 60px;
+    width: 95px;
+    transform: rotate(-90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.r4 h2 {
+    position: relative;
+    top: 300px;
+    font-size: 20px;
+}
+
+.r4 {
+    position:absolute;
+    left:525px ;
+    top: 75px;
+    text-align: center;
+    width: 165px;
+    height: 807px;
+    border: 1px solid;
+    line-height: 2.3;
+    z-index: 1;
+}
+.row_4_arrow {
+    position: absolute;
+    top: 5px;
+    left:580px;
+    height: 72px;
+    width: 70px;
+    transform: rotate(-360deg);
+    clip-path: polygon(47.00% 0.00%, 82.00% 20.00%, 66.00% 20.00%, 67.00% 70.00%, 83.00% 70.00%, 47.00% 95.00%, 12.00% 71.00%, 27.00% 70.00%, 27.00% 21.00%, 13.00% 21.00%);
+
+}
+.Control {
+    position: absolute;
+    left: 495px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 550;
+}
+.text_bottom {
+    position: absolute;
+    left: 365px;
+    top: 1060px;
+    font-size: 20px;
+    font-weight: 550;
+}
+.text_top {
+    position: absolute;
+    left: 140px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+
+  /* middle secton---- */
+  /* ----step two and three--- */
+  .upper_arrow_f {
+    position: absolute;
+    left: 215px;
+    top: 10px;
+    height: 60px;
+    width: 70px;
+    transform: rotate(90deg);
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    position: absolute;
+  }
+/* -----input boxes---  */
+.r_bb1 {
+    position: absolute;
+    top: 75px;
+    left: 110px;
+    width: 275px;
+    height: 55px;
+    font-size: 18px;
+    border: 1px solid;
+    font-weight: 600;
+    z-index: 10;
+}
+.r_bb2 {
+    position: absolute;
+    top: 170px;
+    left: 250px;
+    width: 135px;
+    height: 55px;
+    font-size: 18px;
+    border: 1px solid;
+    font-weight: 600;
+    z-index: 10;
+}
+.r_bb3 {
+    position: absolute;
+    top: 270px;
+    left: 110px;
+    width: 275px;
+    height: 140px;
+    font-size: 20px;
+    border: 1px solid;
+    font-weight: 600;
+    z-index: 10;
+}
+.r_bb4 {
+    position: absolute;
+    top: 485px;
+    left: 245px;
+    width: 140px;
+    height: 60px;
+    font-size: 15px;
+    border: 1px solid;
+    font-weight: 600;
+}
+.r_bb4_4 {
+    position: absolute;
+    top: 640px;
+    left:220px ;
+    width: 165px;
+    height: 70px;
+    clip-path: polygon(14% 0%, 100% 0%, 86% 100%, 0% 100%);
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid;
+}
+.r_bb5 {
+    position: absolute;
+    top: 760px;
+    left: 110px;
+    width: 275px;
+    height: 70px;
+    /* -webkit-clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0); */
+    clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0);
+    border: 1px solid;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 10;
+}
+.r_bb6 {
+    position: absolute;
+    top: 980px;
+    left: 110px;
+    width: 275px;
+    height: 40px;
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 10;
+    
+}
+
+/* ------straight lines and arrow shapee------ */
+.arrow_dwn10 {
+    position: absolute;
+    left: 423px;
+    height: 60px;
+    top: 929px;
+    width: 42px;
+    transform: rotate(-90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.upper_arrow {
+    position: absolute;
+    top: 125px; 
+    left: 295px;
+    height: 50px;
+    width: 40px;
+    transform: rotate(90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.lower_arrow1 {
+    position: absolute;
+    top: 170px;
+    left: 100px;
+    height: 60px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.lower_arrow1 p {
+    line-height: 1.5;
+    font-weight: 700;
+    writing-mode: tb;
+    position: relative;
+    left: -45px;
+}
+
+.bank_arrow_2 {
+    position: absolute;
+    top: 555px;
+    left: 0px;
+    width: 350px;
+    height: 60px;
+    clip-path: polygon(12% 0, 12% 20%, 100% 20%, 100% 80%, 12% 80%, 12% 100%, 0% 50%);
+    transform: rotate(-90deg);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.bank_arrow_2 p {
+    line-height: 1.7;
+    font-weight: 700;
+    writing-mode: tb;
+    position: relative;
+    left: 30px;
+}
+.r_bb56_arrow {
+    position: absolute;
+    top: 485px;
+    left: 185px;
+    width: 60px;
+    height: 60px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    transform: rotate(360deg);
+    z-index: -1;
+    
+}
+.r_bb4_arrow {
+    position: absolute;
+    top: 703px;
+    width: 57px;
+    left: 280px;
+    height: 55px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    transform: rotate(90deg);
+    z-index: -1;
+}
+.StraitLine {
+    position: absolute;
+    top: 410px;
+    height: 50px;
+    left: 305px;
+    width: 30px;
+}
+.StraitLine_Arrow {
+    position: absolute;
+    top: 420px;
+    height: 60px;
+    left: 305px;
+    width: 125px;
+    transform: rotate(360deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.clip_4in {
+    position: absolute;
+    top: 85.9px;
+    height: 228.1px;
+    left: 440px;
+    width: 30px;
+}
+.right_bar {
+    position: absolute;
+    top: 75px;
+    height: 55px;
+    left: 385px;
+    width: 84px;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+.right_bar_1 {
+    position: absolute;
+    top: 270px;
+    height: 55px;
+    left: 385px;
+    width: 84px;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+.right_bar_1>span {
+    position: relative;
+    top: 13px;
+    right: -30px;
+    font-size: 20px;
+    font-weight: 550;
+}
+.f_c_t{
+    position: absolute;
+    top: 185px;
+    height: 25px;
+    left: 385px;
+    width: 84px;
+}
+/* ------B Bus straigt line and arrow----- */
+
+
+.clip_4inn {
+    position: absolute;
+    top: 420px;
+    left: 430px;
+    height: 517px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clip_4inn p {
+    line-height: 1.7;
+    font-weight: 700;
+    position: relative;
+    top: -10px;
+    
+}
+.clip_4inn_arm {
+    position: absolute;
+    top: 910px;
+    left: 243.001px;
+    width: 217px;
+    height: 28px;
+    z-index: -1;
+    
+}
+.clip_4inn_arrow {
+    position: absolute;
+    top: 925px;
+    left: 240px;
+    height: 65px;
+    width: 45px;
+    transform: rotate(90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.right_bar_22 {
+   
+    position: absolute;
+    top: 570px;
+    left: 290px;
+    width: 155px;
+    height: 30px;
+    z-index: -2;
+}
+.r_bb44_arrow {
+    position: absolute;
+    top: 577.5px;
+    left: 271px;
+    width: 70px;
+    height: 55px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    transform: rotate(90deg);
+    z-index: -10;
+}
+
+
+
+/* -----arrow down .....out----- */
+.arrow_dwn {
+    position: absolute;
+    top: 1022px;
+    left: 228px;
+    height: 65px;
+    width: 70px;
+    transform: rotate(90deg);
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+/*........Left Section........*/
+.alu_arrow {
+    position: absolute;
+    top: 830px;
+    height: 65px;
+    left: 235px;
+    width: 35px;
+}
+.alu_arrow1 {
+    position: absolute;
+    top: 855px;
+    height: 40px;
+    left: 30px;
+    width: 240px;
+}
+.cl_path_1 {
+    position: absolute;
+    top: 75px;
+    height: 55px;
+    left: 30px;
+    width: 80px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.left_strait_line {
+    position: absolute;
+}
+.cl_path_2 {
+    position: absolute;
+    top: 310px;
+    height: 60px;
+    left: 30px;
+    width: 80px;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+.left_strait_line_1 {
+    position: absolute;
+    top: 90px;
+    height: 265px;
+    left: 30px;
+    width: 30px;
+}
+.left_strait_line_2 {
+    position: absolute;
+    top: 325px;
+    height: 570px;
+    left: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alu {
+    padding: 0 10px;
+    position: absolute;
+    font-weight: 700;
+}
+
+        /* Flow Chart Section End */
+/*ROW 2 Buttons*/
+.btns {
+    position: fixed;
+    top: 85vh;
+    left: 25%;
+    z-index: 20;
+}
+
+
+.btnForm {
+    border: 3px solid #B7D3FE;
+    background: lite-grey;
+    color: #252525;
+    margin-bottom: 15px;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+}
+.btns .r2_form input:not(:last-child){
+    margin-right: 20px;
+}
+.btnForm:hover{
+    background: #B7D3FE;
+    transition: 0.3s;
+    color: white!important;
+    text-shadow: 2px 2px 5px #252525;
+}
+
+/*END ROW 2 BUTTONS*/
+
+
+
+        @media (max-width:2256px){
+            .btns {
+                top: 80vh;
+                transform: scale(.7);
+            }
+            #messageBox{
+                transform: scale(.9);
+            }
+        } 
