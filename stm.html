@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>.: FlowChart :.</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+<body>
+<script type="text/javascript">
+    var menuNum = 3;
+</script>
+    <section class="section_container">
+        <section class="accordion_section">
+            <div id="messageBox" class="">
+                <div id="step4_1" class="menuSteps">1 The instruction is fetched and decoded by the instruction decoder.</div>
+                <div id="step4_2" class="menuSteps">2 The instruction address is fetched via address register.</div>
+                <div id="step4_3" class="menuSteps">3 Rn is populated with the value. It is read on Bus A</div>
+                <div id="step4_4" class="menuSteps">4 The immediate is fetched</div>
+                <div id="step4_5" class="menuSteps">5 Barrel shifter is used according to the offset in the instruction.</div>
+                <div id="step4_6" class="menuSteps">6 Rn and immediate are finally subjected to ALU which computes the value by performing arithmetic and logical operations required.</div>
+                <div id="step4_7" class="menuSteps">7 Final value is stored in Rd in Register bank</div>
+                <div id="step4_8" class="menuSteps">8 Rd is populated with the value to be stored. It is read on Bus B.</div>
+                <div id="step4_9" class="menuSteps">9 It is stored in data out register.</div>
+                <div id="step4_10" class="menuSteps">10 Rn is populated with the value of address stored and the PC is returned</div>
+                <div id="step4_11" class="menuSteps">Loop into number 3</div>
+            </div>
+            <section class="btns">
+                <div class="row r2">
+                    <form class="r2_form">
+                        <input type="button" value="Run" class="btnForm" id="btnRun" onclick="run();">
+                        <input type="button" value="Step" class="btnForm" id="btnStep" onclick="steps();">
+                        <input type="button" value="Previous" class="btnForm" id="btnBack" onclick="back();">
+                        <input type="button" value="Invisible" class="btnForm" id="btnInvisible" onclick="visibility();">
+                    </form>
+                </div>
+            </section>
+        </section>
+        <section class="flow_chart_sec">
+            <section class="flow_chart animatable_chart">
+                <div class="flow_chart_three nextStep">
+                    <div class="flow_chart_nine_content">
+                        <span class="text_bottom stepone hide">D[31:0]</span>
+                        <div class="Control stepone hide">Control</div>
+                        <span class="row_4_arrow stepone BgPink hide"></span>
+                        <div class="row r4 stepone BgPink hide">
+
+                            <h2 class="stepone hide"> Instruction <br> Decode <br> Control </h2>
+
+                        </div>
+                        <span class="data_in_arrow stepone BgPink hide"></span>
+
+                        <input type="button" value="Data In Register" class="r_bb7 stepone BgPink hide">
+                        <span class="arrow_dwn1 stepone BgPink hide"></span>
+
+                        <span class="arrow_dwn10 stepnone BgPink hide"></span>
+                    </div>
+                </div>
+                <div class="flow_chart_one">
+                    <div class="flow_chart_one_content">
+                        <span class="text_top steptwo hide">A[31:0]</span>
+                        <span class="upper_arrow_f steptwo BgPink hide"></span>
+
+                        <input type="button" value="Address Register" class="r_bb1 steptwo stepsix BgPink hide">
+                        <span class="upper_arrow stepsix steptwofix BgPink hide"></span>
+                    </div>
+                    <div class="flow_chart_two_content">
+                        <input type="button" value="Incrementer" class="r_bb2 stepsix steptwofix BgPink hide">
+                        <span class="f_c_t stepsix steptwofix BgPink hide"></span>
+                    </div>
+                    <div class="flow_chart_three_content">
+                        <span class="lower_arrow1 stepnone BgPink hide">
+                            <p class="stepnone hide">P<br>C</p>
+                        </span>
+                        <input type="button" value="Register Bank" class="r_bb3 steptwo BgPink hide">
+                        <span class="StraitLine stepfour BgPink hide"></span>
+
+                        <span class="StraitLine_Arrow stepfour BgPink hide"></span>
+                    </div>
+                    
+                    <div class="abus_straitline stepthree BgPink hide">
+                        <p class="stepthree hide">A <br><br> B<br>U<br>S</p>
+                    </div>
+                    <div class="bank_arrow_2 stepthree BgPink hide">
+                    </div>
+
+                    <div class="flow_chart_five_content">
+                        <input type="button" value="Multiply Register" class="r_bb4 stepnone BgPink hide">
+                        <span class="r_bb44_arrow stepfour BgPink hide"></span>
+                        <span class="r_bb56_arrow BgPink hide"></span>
+                    </div>
+                    <div class="flow_chart_six_content">
+                        <input type="button" value="Barrel Shifter" class="r_bb4_4 stepfourr_bb56_arrow BgPink hide">
+                        <span class="r_bb4_arrow stepfour BgPink hide"></span>
+                    </div>
+                    <div class="flow_chart_seven_content">
+                        <input type="button" value="ALU" class="r_bb5 stepfive BgPink hide">
+                        <span class="alu_arrow stepseven BgPink hide">
+                        </span>
+                        <span class="alu_arrow_overlap stepseven BgPink hide">
+                        </span>
+                        <span class="alu_arrow1 stepseven BgPink hide">
+                        </span>
+                        <span class="alu_arrow1_overlap stepseven BgPink hide">
+                        </span>
+                    </div>
+                    <div class="flow_chart_eight_content ">
+                        <input type="button" value="Data Out Register" class="r_bb6 stepnone BgPink hide">
+
+                        <span class="arrow_dwn stepnone BgPink hide">
+                        </span>
+                    </div>
+                </div>
+                <div class="flow_chart_1_content">
+                    <div class="row r5">
+                        <!-- <div class="clip_4">
+                        </div> -->
+                        <span class="right_bar steptwo BgPink hide"></span>
+
+                        <div class="clip_4in steptwo stepsix BgPink hide">
+                        </div>
+                        <div class="clip_4innnn stepseven BgDpPink hide">
+                        </div>
+                        <span class="right_bar_1 steptwo stepsix BgPink hide"><span class="stepsix hide">P C</span></span>
+                        <div class="clip_4inn stepfour BgPink hide">
+                        </div>
+                        <div class="clip_4innn stepfour BgPink hide">
+                            <p class="stepfour hide">B<br><br> B <br> U <br> S</p>
+                        </div>
+                        <div class="clip_4innn_overlap stepfour BgPink hide">
+                            <p class="stepfour hide">B<br><br> B <br> U <br> S</p>
+                        </div>
+                        <span class="right_bar_22 stepfour BgPink hide"></span>
+                        <span class="right_bar_22_overlap stepfour BgPink hide"></span>
+                        <div class="clip_4inn_arm stepnone BgPink hide"></div>
+                        <div class="clip_4inn_arrow stepnone BgPink hide"></div>
+                        
+                    </div>
+                </div>
+                
+                <div class="flow_chart_left">
+                    <span class="cl_path_1 stepnone BgPink hide"></span>
+                    <span class="cl_path_2 stepseven BgPink hide"></span>
+                    <div class="left_strait_line_1 BgPink hide"></div>
+                    <div class="left_strait_line_2 BgPink hide">
+                        <span class="alu stepseven hide"> A L U <span class="stepseven hide"><br><br><br>B U S</span></span>
+                    </div>
+                    <div class="left_strait_line_2_overlap BgPink hide">
+                        <span class="alu_overlap stepseven hide"> A L U <span class="stepseven hide"><br><br><br>B U S</span></span>
+                    </div>
+                </div>
+            </section>
+            <section class="flow_chart">
+                <div class="flow_chart_three">
+                    <div class="flow_chart_nine_content">
+                        <span class="text_bottom stepone">D[31:0]</span>
+                        <div class="Control stepone">Control</div>
+                        <span class="row_4_arrow stepone BgBlue"></span>
+                        <div class="row r4 stepone BgBlue">
+
+                            <div class="div_4_clip stepone">
+                            </div>
+                            <h2 class="stepone "> Instruction <br> Decode <br> Control </h2>
+
+                        </div>
+                        <span class="data_in_arrow stepone BgBlue"></span>
+
+                        <input type="button" value="Data In Register" class="r_bb7 stepone BgBlue">
+                        <span class="arrow_dwn1 stepone BgBlue"></span>
+
+                        <span class="arrow_dwn10 stepnone BgBlue"></span>
+                    </div>
+                </div>
+                <div class="flow_chart_one">
+                    <div class="flow_chart_one_content">
+                        <span class="text_top steptwo">A[31:0]</span>
+                        <span class="upper_arrow_f steptwo BgBlue"></span>
+
+                        <input type="button" value="Address Register" class="r_bb1 steptwo stepsix BgBlue">
+                        <span class="upper_arrow stepsix steptwofix BgBlue"></span>
+                    </div>
+                    <div class="flow_chart_two_content">
+                        <input type="button" value="Incrementer" class="r_bb2 stepsix steptwofix BgBlue">
+                        <span class="f_c_t stepsix steptwofix BgBlue"></span>
+                    </div>
+                    <div class="flow_chart_three_content">
+                        <span class="lower_arrow1 stepnone BgBlue">
+                            <p class="stepnone">P<br>C</p>
+                        </span>
+                        <input type="button" value="Register Bank" class="r_bb3 steptwo BgBlue">
+                        <span class="StraitLine stepfour BgBlue"></span>
+
+                        <span class="StraitLine_Arrow stepfour BgBlue"></span>
+                    </div>
+                    <div class="abus_straitline stepthree BgBlue">
+                        <p class="stepthree">A <br><br> B<br>U<br>S</p>
+                    </div>
+                    <div class="bank_arrow_2 stepthree BgBlue">
+                    </div>
+
+                    <div class="flow_chart_five_content">
+                        <input type="button" value="Multiply Register" class="r_bb4 stepnone BgBlue">
+                        <span class="r_bb44_arrow stepfour BgBlue"></span>
+                        <span class="r_bb56_arrow BgBlue"></span>
+                    </div>
+                    <div class="flow_chart_six_content">
+                        <input type="button" value="Barrel Shifter" class="r_bb4_4 stepfourr_bb56_arrow BgBlue">
+                        <span class="r_bb4_arrow stepfour BgBlue"></span>
+                    </div>
+                    <div class="flow_chart_seven_content">
+                        <input type="button" value="ALU" class="r_bb5 stepfive BgBlue">
+                        <span class="alu_arrow stepseven BgBlue">
+                        </span>
+                        <span class="alu_arrow1 stepseven BgBlue">
+                        </span>
+                    </div>
+                    <div class="flow_chart_eight_content ">
+                        <input type="button" value="Data Out Register" class="r_bb6 stepnone BgBlue">
+
+                        <span class="arrow_dwn stepnone BgBlue">
+                        </span>
+                    </div>
+                </div>
+                <div class="flow_chart_1_content">
+                    <div class="row r5">
+                        <!-- <div class="clip_4">
+                        </div> -->
+                        <span class="right_bar steptwo BgBlue"></span>
+
+                        <div class="clip_4in steptwo stepsix BgBlue">
+                        </div>
+                        <span class="right_bar_1 steptwo stepsix BgBlue"><span class="stepsix">P C</span></span>
+                        <div class="clip_4inn stepfour BgBlue">
+                        </div>
+                        <div class="clip_4innn stepfour BgBlue">
+                            <p class="stepfour">B<br><br> B <br> U <br> S</p>
+                        </div>
+                        <span class="right_bar_22 stepfour BgBlue"></span>
+                        <div class="clip_4inn_arm stepnone BgBlue"></div>
+                        <div class="clip_4inn_arrow stepnone BgBlue"></div>
+                        
+                    </div>
+                </div>
+                
+                <div class="flow_chart_left">
+                    <span class="cl_path_1 stepnone BgBlue"></span>
+                    <span class="cl_path_2 stepseven BgBlue"></span>
+                    <div class="left_strait_line_1 BgBlue"></div>
+                    <div class="left_strait_line_2 BgBlue">
+                        <span class="alu stepseven"> A L U <span class="stepseven"><br><br><br>B U S</span></span>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </section>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
