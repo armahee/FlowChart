@@ -36,6 +36,7 @@ async function run() {
 							document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 							document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 							document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
+							await sleep(1000);
 							window['step_'+(i+1)](i);
 						}
 					}
@@ -49,7 +50,7 @@ async function run() {
 	}
 	document.getElementsByClassName('btns')[0].style.display = 'block';
 }
-function steps() {
+async function steps() {
 	for (var i = 0; i < stepFinder[menuNum].length; i++) {
 		if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
 			if(i && i < stepFinder[menuNum].length-1){
@@ -60,6 +61,7 @@ function steps() {
 				document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 				document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 				document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
+				await sleep(1000);
 				window['step_'+(i+1)](i);
 			}
 			break;
@@ -1513,7 +1515,7 @@ function back_8(i) {
 		document.getElementsByClassName('alu_arrow1')[0].classList.add('hide');
 		document.getElementsByClassName('left_strait_line_2')[0].classList.add('hide');
 		document.getElementsByClassName('alu')[0].classList.add('hide');
-		document.getElementsByClassName('stepseven')[5].classList.add('hide');
+		document.getElementsByClassName('stepseven')[7].classList.add('hide');
 		document.getElementsByClassName('cl_path_2')[0].classList.add('hide');
 	}
 	else if (menuNum < 4) {
