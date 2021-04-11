@@ -170,20 +170,39 @@ body {
 .flow_chart {
     transform: scale(.9);
 }
+#flowchart_img {
+    position: absolute;
+    left: -238px;
+    top: -135px;
+    height: 1260px;
+    width: 1145px;
+}
 .animatable_chart {
     z-index: 15;
 }
 .BgBlue {
-    background: #B7D3FE;
+    background: #fff;
+    //border: 1px solid;
+    //background: #B7D3FE;
+    border: none!important;
 }
 .BgPink {
     //background: #FFCCCC;
-    background: #FFB4B4;
+
+    //border: 1px solid;
+    //background: #FFB4B4;
+
+    background: #B7D3FE;
 }
 .BgDpPink {
     //background: #FF33CC;
-    background: #FF9292;
     //background: #F5c725;
+
+    //background: #FF9292;
+
+    //background: #8abee6;
+
+    background: #aec9f2;
 }
 .hide {
     background: transparent!important;
@@ -240,7 +259,7 @@ body {
 .row_4_arrow {
     position: absolute;
     top: 5px;
-    left:580px;
+    left:574.5px;
     height: 72px;
     width: 70px;
     transform: rotate(-360deg);
