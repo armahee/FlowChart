@@ -10,11 +10,15 @@ h2 {
   margin: 16px;
 }
 
-.container {
-    padding: 10px 32px 0 32px;
+.shader{
     position: fixed;
-    z-index: 30;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+    background: gray;
+    opacity: 50%;
 }
 
 .select-box {
@@ -161,6 +165,11 @@ body {
 }
 .animatable_chart {
     z-index: 15;
+}
+.BgWhite {
+    background: #fff!important;
+    border: 1px solid!important;
+    z-index: 40!important;
 }
 .BgBlue {
     background: #fff;
@@ -741,11 +750,15 @@ body {
     display: none;
 }
 
+.msgPop{
+    z-index: 40;
+}
+
 .register_bank{
     /* display: none; */
     position: absolute;
-    top: 385px;
-    left: 340px;
+    top: 520px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -765,8 +778,8 @@ body {
 }
 .ALU{
     position: absolute;
-    top: 760px;
-    left: 312px;
+    top: 1020px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -784,8 +797,8 @@ body {
 }
 .barrel-shifter{
     position: absolute;
-    top: 655px;
-    left: 320px;
+    top: 880px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -803,8 +816,8 @@ body {
 }
 .address-register{
     position: absolute;
-    top: 125px;
-    left: 345px;
+    top: 180px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -822,8 +835,8 @@ body {
 }
 .incrementer{
     position: absolute;
-    top: 210px;
-    left: 348px;
+    top: 290px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -841,8 +854,8 @@ body {
 }
 .data-out{
     position: absolute;
-    top: 940px;
-    left: 280px;
+    top: 1100px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -860,8 +873,8 @@ body {
 }
 .data-in{
     position: absolute;
-    top: 940px;
-    left: 300px;
+    top: 1100px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 0px 10px;
@@ -879,8 +892,8 @@ body {
 }
 .instruction-decode{
     position: absolute;
-    top: 500px;
-    left: 300px;
+    top: 660px;
+    left: 55%;
     border-radius: 15px;
     width: 30vw;
     padding: 10px;
@@ -982,6 +995,30 @@ body {
             }
             .btns .r2_form input:not(:last-child) {
                 margin-right: 10px;
+            }
+            .register_bank{
+                top: 220px;
+            }
+            .ALU{
+                top: 430px;
+            }
+            .barrel-shifter{
+                top: 370px;
+            }
+            .address-register{
+                top: 90px;
+            }
+            .incrementer{
+                top: 130px;
+            }
+            .data-out{
+                top: 400px;
+            }
+            .data-in{
+                top: 400px;
+            }
+            .instruction-decode{
+                top: 290px;
             }
         } 
         @media (min-width: 2000px){
