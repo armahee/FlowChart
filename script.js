@@ -6,19 +6,20 @@ function removeShade(argument) {
 function msgPop(elem) {
 	var allelem = document.getElementsByClassName('msgPop');
 	if(document.getElementsByClassName(elem.id)[0].classList.contains('none')){
-		/*for (var i = 0; i < allelem.length; i++) {
+		for (var i = 0; i < allelem.length; i++) {
 			allelem[i].classList.add('none');
-		}*/
-		elem.classList.add('BgWhite');
+		}
+		//document.getElementsByClassName('shader')[0].classList.remove('none');
+		document.getElementsByClassName(elem.id)[0].classList.remove('none');
+		/*elem.classList.add('BgWhite');
 		if(elem.classList.contains('hide')){
 			elem.classList.remove('hide');
 		}
-		document.getElementsByClassName('shader')[0].classList.remove('none');
-		document.getElementsByClassName(elem.id)[0].classList.remove('none');
+		elem.style.zIndex = '40';*/
 	}
 	else{
-		elem.classList.remove('BgWhite');
-		document.getElementsByClassName('shader')[0].classList.add('none');
+		//elem.classList.remove('BgWhite');
+		//document.getElementsByClassName('shader')[0].classList.add('none');
 		document.getElementsByClassName(elem.id)[0].classList.add('none');
 	}
 }

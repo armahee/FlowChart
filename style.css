@@ -106,9 +106,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: relative;
-    margin-top: 1%;
-    transform: scale(.6);
 }
 
 /* Message Box Section */
@@ -116,26 +113,18 @@ body {
 
 .accordion_section {
     position: absolute;
-    top:30%;
-    left: 5%;
-    display: flex;
-    flex: 1;
-    margin: 0 0 0 100px;
-    
-
+    top: 0;
+    margin: 3%;
+    width: -webkit-fill-available;
 }
 #messageBox {
     position: relative;
     margin: 0;
-    /* bottom:50%; */
-    /* left: 5%; */
     text-align: left;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 700;
     width: 40%;
 }
@@ -156,26 +145,19 @@ body {
 
 
         /* Flow Chart Section */
- 
-.flow_chart_sec{
-    position: absolute;
-    margin: 0;
-    top:30%;
-    right: 10%;
-    display: flex;
-    width: 40%;
-    height: 70vh;
-    
-}
 .flow_chart {
-    transform: scale(.9);
+    transform: scale(.5);
+    position: fixed;
 }
 #flowchart_img {
     position: absolute;
-    left: -238px;
+    /*left: -238px;
     top: -135px;
     height: 1260px;
-    width: 1145px;
+    width: 1145px;*/
+    left: 30px;
+    top: 3px;
+    height: 1088px;
 }
 .animatable_chart {
     z-index: 15;
@@ -222,8 +204,8 @@ body {
 }
 .r_bb7 {
     position: absolute;
-    left: 415px;
-    top: 980px;
+    left: 416px;
+    top: 981.5px;
     height: 40px;
     width: 275px;
     border: 1px solid;
@@ -234,7 +216,7 @@ body {
     position: absolute;
     left: 575px;
     top: 902px;
-    height: 60px;
+    height: 65px;
     width: 95px;
     transform: rotate(-90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -259,8 +241,8 @@ body {
 .row_4_arrow {
     position: absolute;
     top: 5px;
-    left:574.5px;
-    height: 72px;
+    left:579.5px;
+    height: 70px;
     width: 70px;
     transform: rotate(-360deg);
     clip-path: polygon(47.00% 0.00%, 82.00% 20.00%, 66.00% 20.00%, 67.00% 70.00%, 83.00% 70.00%, 47.00% 95.00%, 12.00% 71.00%, 27.00% 70.00%, 27.00% 21.00%, 13.00% 21.00%);
@@ -293,9 +275,9 @@ body {
   /* ----step two and three--- */
   .upper_arrow_f {
     position: absolute;
-    left: 215px;
+    left: 216px;
     top: 10px;
-    height: 60px;
+    height: 59px;
     width: 70px;
     transform: rotate(90deg);
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
@@ -425,7 +407,7 @@ body {
     position: absolute;
     top: 410px;
     height: 300px;
-    left: 152px;
+    left: 153px;
     width: 34px;
 
 }
@@ -433,7 +415,7 @@ body {
     position: absolute;
     top: 695px;
     width: 70px;
-    left: 134px;
+    left: 135px;
     height: 57px;
     //width: 350px;
     transform: rotate(90deg);
@@ -506,7 +488,7 @@ body {
 }
 .right_bar {
     position: absolute;
-    top: 75px;
+    top: 73px;
     height: 55px;
     left: 385px;
     width: 84px;
@@ -637,7 +619,7 @@ body {
     position: absolute;
     top: 830px;
     height: 65px;
-    left: 235px;
+    left: 236px;
     width: 35px;
 }
 .alu_arrow1 {
@@ -691,7 +673,7 @@ body {
     position: absolute;
     top: 325px;
     height: 570px;
-    left: 30px;
+    left: 31px;
     width: 30px;
     display: flex;
     justify-content: center;
@@ -722,9 +704,11 @@ body {
 /*ROW 2 Buttons*/
 .btns {
     position: fixed;
-    top: 85vh;
-    left: 25%;
+    top: 95vh;
     z-index: 20;
+    margin-left: 5%;
+    width: fit-content;
+    left: 50%;
 }
 
 
@@ -751,17 +735,257 @@ body {
     text-shadow: 2px 2px 5px #252525;
 }
 
+
+            /* pop up message section */
+.none {
+    display: none;
+}
+
+.register_bank{
+    /* display: none; */
+    position: absolute;
+    top: 385px;
+    left: 340px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+
+.register_bank:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+    /* transition: ease-in-out; */
+}
+.ALU{
+    position: absolute;
+    top: 760px;
+    left: 312px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.ALU:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.barrel-shifter{
+    position: absolute;
+    top: 655px;
+    left: 320px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.barrel-shifter:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.address-register{
+    position: absolute;
+    top: 125px;
+    left: 345px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.address-register:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.incrementer{
+    position: absolute;
+    top: 210px;
+    left: 348px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.incrementer:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.data-out{
+    position: absolute;
+    top: 940px;
+    left: 280px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.data-out:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.data-in{
+    position: absolute;
+    top: 940px;
+    left: 300px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 0px 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.data-in:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+.instruction-decode{
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    border-radius: 15px;
+    width: 30vw;
+    padding: 10px;
+    background: #B7D3FE;
+    border: 2px solid #B7D3FE;
+    font-size: 18px;
+    color: #3f3f3f;
+    animation-name: tada;
+    animation-duration: 1.5s;
+    transition: all 0.5s ease;
+}
+.instruction-decode:hover{
+    box-shadow: 5px 5px 15px #6c6f74;
+    transform: scale(1.1);
+}
+
+
+
+
+
+                /* animation */
+
+
+@keyframes pulse {
+    0% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    50% {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes tada {
+    0% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    10%, 20% {
+      -webkit-transform: scale(0.9) rotate(-3deg);
+      -ms-transform: scale(0.9) rotate(-3deg);
+      transform: scale(0.9) rotate(-3deg);
+    }
+  
+    30%, 50%, 70%, 90% {
+      -webkit-transform: scale(1.1) rotate(3deg);
+      -ms-transform: scale(1.1) rotate(3deg);
+      transform: scale(1.1) rotate(3deg);
+    }
+  
+    40%, 60%, 80% {
+      -webkit-transform: scale(1.1) rotate(-3deg);
+      -ms-transform: scale(1.1) rotate(-3deg);
+      transform: scale(1.1) rotate(-3deg);
+    }
+  
+    100% {
+      -webkit-transform: scale(1) rotate(0);
+      -ms-transform: scale(1) rotate(0);
+      transform: scale(1) rotate(0);
+    }
+  }
+
+
+
+
 /*END ROW 2 BUTTONS*/
 
 
 
-        @media (max-width:2256px){
+        @media (max-width:1999px){
             .btns {
-                top: 145vh;
-                left: 21%;
-                transform: scale(.7);
+                top: 90vh;
+                left: 45%;
             }
             #messageBox{
-                transform: scale(.9);
+                font-size: 12px;
+            }
+            .menuSteps{
+                padding: 10px;
+            }
+            .accordion_section{
+                margin: 1%;
+            }
+            .btnForm {
+                font-size: 12px;
+                padding: 5px 15px;
+            }
+            .btns .r2_form input:not(:last-child) {
+                margin-right: 10px;
             }
         } 
+        @media (min-width: 2000px){
+            .flow_chart {
+                transform: scale(1.2);
+            }
+        }
