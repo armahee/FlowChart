@@ -1,16 +1,36 @@
 var stepNum = 0;
 var isRunning = false;
+function removeShade(argument) {
+	// body...
+}
+function msgPop(elem) {
+	var allelem = document.getElementsByClassName('msgPop');
+	if(document.getElementsByClassName(elem.id)[0].classList.contains('none')){
+		/*for (var i = 0; i < allelem.length; i++) {
+			allelem[i].classList.add('none');
+		}*/
+		elem.classList.add('BgWhite');
+		if(elem.classList.contains('hide')){
+			elem.classList.remove('hide');
+		}
+		document.getElementsByClassName('shader')[0].classList.remove('none');
+		document.getElementsByClassName(elem.id)[0].classList.remove('none');
+	}
+	else{
+		elem.classList.remove('BgWhite');
+		document.getElementsByClassName('shader')[0].classList.add('none');
+		document.getElementsByClassName(elem.id)[0].classList.add('none');
+	}
+}
 function visibility() {
 	var btn = document.getElementById('btnInvisible');
 	if(btn.value == 'Invisible'){
 		btn.value = 'Visible';
 		document.getElementsByClassName('flow_chart')[1].style.display = 'none';
-		document.getElementsByClassName('flow_chart')[2].style.display = 'none';
 	}
 	else{
 		btn.value = 'Invisible';
 		document.getElementsByClassName('flow_chart')[1].style.display = 'block';
-		document.getElementsByClassName('flow_chart')[2].style.display = 'block';
 	}
 } 
 var stepFinder = [
@@ -2268,14 +2288,6 @@ function back_8(i) {
 				elem.style.height = pos + "px";
 			}
 		}
-	
-
-		document.getElementsByClassName('StraitLine')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('StraitLine_Arrow')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('clip_4inn')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('clip_4innn_overlap')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('clip_4inn_arm')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('clip_4inn_arrow')[0].classList.remove('BgDpPink');
     }
 	else {
 		var elem = document.getElementsByClassName('StraitLine')[0];
@@ -2362,11 +2374,6 @@ function back_8(i) {
 				elem.style.height = pos + "px";
 			}
 		}
-		document.getElementsByClassName('StraitLine')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('StraitLine_Arrow')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('clip_4inn')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('right_bar_22_overlap')[0].classList.remove('BgDpPink');
-		document.getElementsByClassName('r_bb44_arrow')[0].classList.remove('BgDpPink');
 	}
 }
 function back_9(i) {
