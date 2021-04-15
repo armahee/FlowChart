@@ -150,7 +150,7 @@ body {
 
         /* Flow Chart Section */
 .flow_chart {
-    transform: scale(.5);
+    transform: scale(.65);
     position: fixed;
 }
 #flowchart_img {
