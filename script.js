@@ -58,6 +58,8 @@ async function run() {
 			if(j < stepFinder[menuNum].length-1){
 				for (var i = j; i < stepFinder[menuNum].length; i++) {
 					if(!isRunning){
+						document.getElementsByClassName('btns')[1].style.display = 'none';
+						document.getElementsByClassName('btns')[0].style.display = 'block';
 						break;
 					}
 					if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
@@ -77,13 +79,18 @@ async function run() {
 						await sleep(3000);
 					}
 					if(!isRunning){
+						document.getElementsByClassName('btns')[1].style.display = 'none';
+						document.getElementsByClassName('btns')[0].style.display = 'block';
 						break;
 					}
 				}
 			}
+			document.getElementsByClassName('btns')[1].style.display = 'none';
+			document.getElementsByClassName('btns')[0].style.display = 'block';
 			break;
 		}
 	}
+	document.getElementsByClassName('btns')[1].style.display = 'none';
 	document.getElementsByClassName('btns')[0].style.display = 'block';
 }
 async function steps() {
