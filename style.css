@@ -9,6 +9,17 @@
 h2 {
   margin: 16px;
 }
+.title{
+    position: fixed;
+    left: 50%;
+    top: 4px;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
 
 .shader{
     position: fixed;
@@ -17,94 +28,15 @@ h2 {
     width: 100%;
     height: 100vh;
     z-index: 30;
-    background: gray;
-    opacity: 50%;
+    background: black;
+    opacity: 70%;
 }
 
-.select-box {
-  display: flex;
-  width: 400px;
-  flex-direction: column;
-}
-
-.select-box .options-container {
-  background: #FFCCCC;
-  color: #f5f6fa;
-  max-height: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.4s;
-  border-radius: 8px;
-  overflow: hidden;
-  order: 1;
-}
-
-.selected {
-  background: #FFCCCC;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  //color: #f5f6fa;
-  color: #3f3f3f;
-  position: relative;
-  order: 0;
-}
-
-.selected::after {
-  content: "";
-  background: url("img/arrow-down.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 100%;
-  width: 32px;
-  right: 10px;
-  top: 5px;
-  transition: all 0.4s;
-}
-.select-box .options-container.active {
-  max-height: 240px;
-  opacity: 1;
-  overflow-y: scroll;
-}
-
-.select-box .options-container.active + .selected::after {
-  transform: rotateX(180deg);
-  top: -6px;
-}
-
-.select-box .options-container::-webkit-scrollbar {
-  width: 8px;
-  background:transparent;
-  border-radius: 0 8px 8px 0;
-}
-
-.select-box .options-container::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 0 8px 8px 0;
-}
-
-.select-box .option,
-.selected {
-  padding: 12px 24px;
-  cursor: pointer;
-}
-
-.select-box .option:hover {
-  background: #B7D3FE;
-  text-shadow: 0px 0.5px 3px #525151d7;
-}
-
-.select-box label {
-  cursor: pointer;
-}
-
-.select-box .option .radio {
-  display: none;
-}
 body {
-    /* margin: 0 8px; */
+    margin-top: 40px;
+    margin-left: 25%;
     max-height: 100vh;
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .section_container {
     display: flex;
@@ -118,25 +50,33 @@ body {
 .accordion_section {
     position: absolute;
     top: 0;
-    margin: 3%;
+    margin: 4%;
     width: -webkit-fill-available;
 }
 #messageBox {
-    position: relative;
+    top: 0;
+    position: absolute;
     margin: 0;
     text-align: left;
     padding: 20px;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 500;
+    width: 35%;
+}
+.msgBoxBg{
+    position: relative;
+    margin: 0;
     width: 40%;
+    z-index: 35;
+    height: 1000px;
 }
 .menuSteps {
     border-radius: 10px;
     width: 100%;
-    padding: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    padding: 10px;
     border: 2px solid #3f3f3f;
 }
 
@@ -152,6 +92,8 @@ body {
 .flow_chart {
     transform: scale(.65);
     position: fixed;
+    left: 56%;
+    z-index: 15;
 }
 #flowchart_img {
     position: absolute;
@@ -164,7 +106,7 @@ body {
     height: 1088px;
 }
 .animatable_chart {
-    z-index: 15;
+    z-index: 16;
 }
 .BgWhite {
     background: #fff!important;
@@ -196,8 +138,14 @@ body {
     background: #96c0ff;
 }
 .hide {
+    background: transparent;
+    color: transparent;
+    border: none;
+}
+.hideImportant {
     background: transparent!important;
     color: transparent!important;
+    border: none!important;
 }
 
         /* right side bar----step one */
@@ -205,27 +153,28 @@ body {
 .arrow_dwn1 {
     position: absolute;
     left: 525px;
-    top: 1025px;
-    height: 60px;
+    top: 1024px;
+    height: 64px;
     width: 70px;
+    z-index: -1;
     transform: rotate(-90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 .r_bb7 {
     position: absolute;
-    left: 416px;
+    left: 415px;
     top: 981.5px;
     height: 40px;
-    width: 275px;
+    width: 277px;
     border: 1px solid;
     font-size: 18px;
     font-weight: 600;
 }
 .data_in_arrow {
     position: absolute;
-    left: 575px;
-    top: 902px;
-    height: 65px;
+    left: 575.5px;
+    top: 901px;
+    height: 67px;
     width: 95px;
     transform: rotate(-90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -238,21 +187,21 @@ body {
 
 .r4 {
     position:absolute;
-    left:525px ;
-    top: 75px;
+    left:524px ;
+    top: 70px;
     text-align: center;
-    width: 165px;
-    height: 807px;
+    width: 166px;
+    height: 815px;
     border: 1px solid;
     line-height: 2.3;
     z-index: 1;
 }
 .row_4_arrow {
     position: absolute;
-    top: 5px;
-    left:579.5px;
-    height: 70px;
-    width: 70px;
+    top: 3px;
+    left:579px;
+    height: 71px;
+    width: 72px;
     transform: rotate(-360deg);
     clip-path: polygon(47.00% 0.00%, 82.00% 20.00%, 66.00% 20.00%, 67.00% 70.00%, 83.00% 70.00%, 47.00% 95.00%, 12.00% 71.00%, 27.00% 70.00%, 27.00% 21.00%, 13.00% 21.00%);
 
@@ -284,21 +233,22 @@ body {
   /* ----step two and three--- */
   .upper_arrow_f {
     position: absolute;
-    left: 216px;
-    top: 10px;
-    height: 59px;
-    width: 70px;
+    left: 214px;
+    top: 8px;
+    height: 63px;
+    width: 75px;
     transform: rotate(90deg);
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
     position: absolute;
+    /*! z-index: ; */
   }
 /* -----input boxes---  */
 .r_bb1 {
     position: absolute;
-    top: 75px;
+    top: 72px;
     left: 110px;
     width: 275px;
-    height: 55px;
+    height: 56px;
     font-size: 18px;
     border: 1px solid;
     font-weight: 600;
@@ -306,10 +256,10 @@ body {
 }
 .r_bb2 {
     position: absolute;
-    top: 170px;
+    top: 168px;
     left: 250px;
     width: 135px;
-    height: 55px;
+    height: 57px;
     font-size: 18px;
     border: 1px solid;
     font-weight: 600;
@@ -317,10 +267,10 @@ body {
 }
 .r_bb3 {
     position: absolute;
-    top: 270px;
+    top: 269px;
     left: 110px;
     width: 275px;
-    height: 140px;
+    height: 141px;
     font-size: 20px;
     border: 1px solid;
     font-weight: 600;
@@ -338,10 +288,10 @@ body {
 }
 .r_bb4_4 {
     position: absolute;
-    top: 640px;
-    left:220px ;
-    width: 165px;
-    height: 70px;
+    top: 641px;
+    left:220px;
+    width: 167px;
+    height: 72px;
     clip-path: polygon(14% 0%, 100% 0%, 86% 100%, 0% 100%);
     font-size: 18px;
     font-weight: 600;
@@ -352,7 +302,7 @@ body {
     top: 760px;
     left: 110px;
     width: 275px;
-    height: 70px;
+    height: 71px;
     /* -webkit-clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0); */
     clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0);
     border: 1px solid;
@@ -362,7 +312,7 @@ body {
 }
 .r_bb6 {
     position: absolute;
-    top: 980px;
+    top: 982px;
     left: 110px;
     width: 275px;
     height: 40px;
@@ -376,28 +326,29 @@ body {
 /* ------straight lines and arrow shapee------ */
 .arrow_dwn10 {
     position: absolute;
-    left: 423px;
-    height: 60px;
-    top: 929px;
-    width: 42px;
+    left: 420px;
+    height: 64px;
+    top: 931px;
+    width: 50px;
+    z-index: -1;
     transform: rotate(-90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 .upper_arrow {
     position: absolute;
-    top: 125px; 
-    left: 295px;
-    height: 50px;
-    width: 40px;
+    top: 122px;
+    left: 294px;
+    height: 52px;
+    width: 44px;
     transform: rotate(90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 .lower_arrow1 {
     position: absolute;
-    top: 170px;
-    left: 100px;
-    height: 60px;
-    width: 140px;
+    top: 172px;
+    left: 94px;
+    height: 63px;
+    width: 152px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -416,16 +367,16 @@ body {
     position: absolute;
     top: 410px;
     height: 300px;
-    left: 153px;
-    width: 34px;
+    left: 152px;
+    width: 36px;
 
 }
 .bank_arrow_2 {
     position: absolute;
-    top: 695px;
-    width: 70px;
-    left: 135px;
-    height: 57px;
+    top: 694px;
+    width: 74px;
+    left: 133px;
+    height: 60px;
     //width: 350px;
     transform: rotate(90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -458,9 +409,9 @@ body {
 .r_bb4_arrow {
     position: absolute;
     top: 703px;
-    width: 57px;
+    width: 60px;
     left: 280px;
-    height: 55px;
+    height: 60px;
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
     transform: rotate(90deg);
     z-index: -1;
@@ -470,7 +421,7 @@ body {
     top: 410px;
     height: 50px;
     left: 305px;
-    width: 30px;
+    width: 31px;
 }
 .StraitLine_Arrow {
     position: absolute;
@@ -485,30 +436,30 @@ body {
     position: absolute;
     top: 85.9px;
     height: 228.1px;
-    left: 440px;
-    width: 30px;
+    left: 439px;
+    width: 31px;
 }
 .clip_4innnn {
     position: absolute;
-    top: 185px;
+    top: 184px;
     height: 129px;
-    left: 440px;
-    width: 30px;
+    left: 439px;
+    width: 31px;
 }
 .right_bar {
     position: absolute;
-    top: 73px;
-    height: 55px;
-    left: 385px;
-    width: 84px;
+    top: 72px;
+    height: 57px;
+    left: 384px;
+    width: 86px;
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
 }
 .right_bar_1 {
     position: absolute;
-    top: 270px;
-    height: 55px;
-    left: 385px;
-    width: 84px;
+    top: 268px;
+    height: 58px;
+    left: 384px;
+    width: 86px;
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
 }
 .right_bar_1>span {
@@ -520,8 +471,8 @@ body {
 }
 .f_c_t{
     position: absolute;
-    top: 185px;
-    height: 25px;
+    top: 184px;
+    height: 26px;
     left: 385px;
     width: 84px;
 }
@@ -530,7 +481,7 @@ body {
 
 .clip_4inn {
     position: absolute;
-    top: 420px;
+    top: 421px;
     left: 430px;
     height: 180px;
     width: 30px;
@@ -543,7 +494,7 @@ body {
     position: absolute;
     top: 570px;
     left: 430px;
-    height: 367px;
+    height: 370px;
     width: 30px;
     display: flex;
     justify-content: center;
@@ -553,7 +504,7 @@ body {
     position: absolute;
     top: 570px;
     left: 430px;
-    height: 367px;
+    height: 370px;
     width: 30px;
     display: flex;
     justify-content: center;
@@ -566,12 +517,19 @@ body {
     top: -10px;
     
 }
+.clip_4innn_overlap p {
+    line-height: 1.7;
+    font-weight: 700;
+    position: relative;
+    top: -10px;
+    
+}
 .clip_4inn_arm {
     position: absolute;
     top: 910px;
     left: 243.001px;
     width: 217px;
-    height: 28px;
+    height: 30px;
     z-index: -1;
     
 }
@@ -579,14 +537,14 @@ body {
     position: absolute;
     top: 925px;
     left: 240px;
-    height: 65px;
-    width: 45px;
+    height: 68px;
+    width: 47px;
     transform: rotate(90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 .right_bar_22 {
     position: absolute;
-    top: 570px;
+    top: 571px;
     left: 290px;
     width: 155px;
     height: 30px;
@@ -594,18 +552,18 @@ body {
 }
 .right_bar_22_overlap {
     position: absolute;
-    top: 570px;
+    top: 571px;
     left: 290px;
-    width: 155px;
+    width: 156px;
     height: 30px;
     z-index: -2;
 }
 .r_bb44_arrow {
     position: absolute;
     top: 577.5px;
-    left: 271px;
+    left: 272px;
     width: 70px;
-    height: 55px;
+    height: 60px;
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
     transform: rotate(90deg);
     z-index: -10;
@@ -616,10 +574,10 @@ body {
 /* -----arrow down .....out----- */
 .arrow_dwn {
     position: absolute;
-    top: 1022px;
-    left: 228px;
-    height: 65px;
-    width: 70px;
+    top: 1024px;
+    left: 227px;
+    height: 68px;
+    width: 72px;
     transform: rotate(90deg);
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
@@ -628,34 +586,34 @@ body {
     position: absolute;
     top: 830px;
     height: 65px;
-    left: 236px;
-    width: 35px;
+    left: 235px;
+    width: 37px;
 }
 .alu_arrow1 {
     position: absolute;
-    top: 855px;
+    top: 857px;
     height: 40px;
     left: 30px;
-    width: 240px;
+    width: 242px;
 }
 .alu_arrow_overlap {
     position: absolute;
     top: 830px;
     height: 65px;
     left: 235px;
-    width: 35px;
+    width: 37px;
 }
 .alu_arrow1_overlap {
     position: absolute;
-    top: 855px;
+    top: 857px;
     height: 40px;
     left: 30px;
-    width: 240px;
+    width: 242px;
 }
 .cl_path_1 {
     position: absolute;
-    top: 75px;
-    height: 55px;
+    top: 71px;
+    height: 59px;
     left: 30px;
     width: 80px;
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -673,17 +631,17 @@ body {
 }
 .left_strait_line_1 {
     position: absolute;
-    top: 90px;
+    top: 85px;
     height: 265px;
     left: 30px;
-    width: 30px;
+    width: 31px;
 }
 .left_strait_line_2 {
     position: absolute;
     top: 325px;
     height: 570px;
-    left: 31px;
-    width: 30px;
+    left: 30px;
+    width: 31px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -693,7 +651,7 @@ body {
     top: 325px;
     height: 570px;
     left: 30px;
-    width: 30px;
+    width: 31px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -712,35 +670,34 @@ body {
         /* Flow Chart Section End */
 /*ROW 2 Buttons*/
 .btns {
-    position: fixed;
-    top: 95vh;
+    position: absolute;
+    top: 1150px;
     z-index: 20;
-    margin-left: 5%;
-    width: fit-content;
-    left: 50%;
+    left: 10px;
+    width: max-content;
 }
 
 
 .btnForm {
-    border: 3px solid #B7D3FE;
-    background: lite-grey;
+    border: 2px solid #B7D3FE;
+    background: #eeecec	;
     color: #252525;
     margin-bottom: 15px;
-    padding: 10px 30px;
     font-weight: bold;
-    font-size: 22px;
     letter-spacing: 2px;
     cursor: pointer;
     outline: none;
-    border-radius: 15px;
+    border-radius: 20px;
+    font-size: 22px;
+    padding: 10px 30px;
 }
-.btns .r2_form input:not(:last-child){
-    margin-right: 20px;
+.btns input {
+    margin-right: 10px;
 }
-.btnForm:hover{
+.btnForm:hover {
     background: #B7D3FE;
     transition: 0.3s;
-    color: white!important;
+    color: white;
     text-shadow: 2px 2px 5px #252525;
 }
 
@@ -752,164 +709,285 @@ body {
 
 .msgPop{
     z-index: 40;
+    font-size: 20px;
 }
 
 .register_bank{
-    /* display: none; */
+    top: 415px;
     position: absolute;
-    top: 520px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 
 .register_bank:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
-    /* transition: ease-in-out; */
 }
 .ALU{
+    top: 840px;
     position: absolute;
-    top: 1020px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .ALU:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .barrel-shifter{
+    top: 720px;
     position: absolute;
-    top: 880px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .barrel-shifter:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .address-register{
+    top: 140px;
     position: absolute;
-    top: 180px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .address-register:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .incrementer{
+    top: 240px;
     position: absolute;
-    top: 290px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .incrementer:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .data-out{
+    bottom: -960px;
     position: absolute;
-    top: 1100px;
-    left: 55%;
+    left: 60px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .data-out:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .data-in{
+    bottom: -960px;
     position: absolute;
-    top: 1100px;
-    left: 55%;
+    left: 245px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 0px 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .data-in:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
 .instruction-decode{
+    top: 525px;
     position: absolute;
-    top: 660px;
-    left: 55%;
+    left: 360px;
     border-radius: 15px;
-    width: 30vw;
+    width: 20vw;
     padding: 10px;
-    background: #B7D3FE;
-    border: 2px solid #B7D3FE;
-    font-size: 18px;
+    background: #DCDCDC;
+    border: 2px solid #D3D3D3;
     color: #3f3f3f;
-    animation-name: tada;
-    animation-duration: 1.5s;
-    transition: all 0.5s ease;
 }
 .instruction-decode:hover{
-    box-shadow: 5px 5px 15px #6c6f74;
+    box-shadow: 5px 5px 15px #D3D3D3;
     transform: scale(1.1);
 }
+                /* tour */
 
+.help-icn{
+    width: 16px;
+    cursor: pointer; 
+}
+.icn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    top: 532px;
+    left: -405px;
+    background: #f1ededf0;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+button{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: #f1ededf0;
+    color: #3f3f3f;
+    padding: 5px 15px;
+    z-index: 2000;
+}
+button:hover{
+    background: rgb(228, 227, 227);
+    color: #10d7f1f8;
+    transition-duration: 0.8s;
+}
+h1{
+    font-weight: 600;
+    font-size: 24px;
+    padding: 10px 20px;
+    color: #3f3f3f;
+    line-height: 30px;
+    margin-top: 40px;
+}
+.invisible-btn-txt h1{
+    margin-top: 5px;
+    font-size: 23px;
+}
+
+.next1{
+    position: absolute;
+    top: 75%;
+    left: 75%;
+}
+.dismiss{
+    position: absolute;
+    top: 75%;
+    left: 8%;
+    color: grey;
+}
+.finish{
+    left: 50%;
+}
+.dismiss:hover{
+    color: #3f3f3f;
+}
+.pipeline-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    top: 435px;
+    left: -535px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+/* .pipeline-txt p{
+    font-size: 14px;
+    padding: 18px;
+    color: grey;
+    line-height: 20px;
+} */
+.ARM-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    top: 435px;
+    left: -30px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+.run-btn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    bottom: -1128px;
+    left: -255px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+.step-btn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    bottom: -1128px;
+    left: -130px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+.previous-btn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    bottom: -1128px;
+    left: 0px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+.invisible-btn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    bottom: -1128px;
+    left: 185px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
+.information-btn-txt{
+    border-radius: 5px;
+    height: 250px;
+    width: 500px;
+    text-align: center;
+    position: absolute;
+    bottom: -1128px;
+    left: 540px;
+    background: #f1ededf0	;
+    box-shadow: 3px 2px 15px #252525;
+    z-index: 2000;
+}
 
 
 
@@ -975,54 +1053,22 @@ body {
 
 
 
-        @media (max-width:1999px){
-            .btns {
-                top: 90vh;
-                left: 45%;
-            }
-            #messageBox{
-                font-size: 12px;
-            }
-            .menuSteps{
-                padding: 10px;
-            }
-            .accordion_section{
-                margin: 1%;
-            }
-            .btnForm {
-                font-size: 12px;
-                padding: 5px 15px;
-            }
-            .btns .r2_form input:not(:last-child) {
-                margin-right: 10px;
-            }
-            .register_bank{
-                top: 220px;
-            }
-            .ALU{
-                top: 430px;
-            }
-            .barrel-shifter{
-                top: 370px;
-            }
-            .address-register{
-                top: 90px;
-            }
-            .incrementer{
-                top: 130px;
-            }
-            .data-out{
-                top: 400px;
-            }
-            .data-in{
-                top: 400px;
-            }
-            .instruction-decode{
-                top: 290px;
-            }
-        } 
-        @media (min-width: 2000px){
-            .flow_chart {
-                transform: scale(1.2);
-            }
-        }
+@media (min-width: 2000px){
+    .flow_chart {
+        transform: scale(1.2);
+    }
+    #messageBox{
+        font-size: 25px;
+    }
+    .menuSteps{
+        padding: 20px;
+    }
+    .accordion_section{
+        margin: 3%;
+    }
+}
+@media (max-width: 1440px){
+    .flow_chart {
+        transform: scale(.5);
+    }
+}

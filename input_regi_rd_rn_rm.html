@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.: FlowChart :.</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -15,8 +15,11 @@
     var menuNum = 0;
 </script>
     <div class="shader none" onclick="removeShade(this)"></div>
+    <h4 class="title">Addition of two registers<br>ADD Rd, Rn, Rm
+</h4>
     <div class="section_container">
         <div class="accordion_section">
+            <div class="msgBoxBg"></div>
             <div id="messageBox" class="">
                 <div id="step1_1" class="menuSteps">1. The instruction’s address is passed from address register to memory via address bus A[31:0]</div>
                 <div id="step1_2" class="menuSteps">2. The instruction is fetched from memory via data bus D[31:0]</div>

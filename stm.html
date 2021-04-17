@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.: FlowChart :.</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -14,21 +14,27 @@
 <script type="text/javascript">
     var menuNum = 3;
 </script>
+<h4 class="title">Store multiple registers <br>
+    STM Rd, [Rn, Rm, Rx]    
+    </h4>
+    <div class="shader none" onclick="removeShade(this)"></div>
     <div class="section_container">
-
         <div class="accordion_section">
+            <div class="msgBoxBg"></div>
             <div id="messageBox" class="">
-                <div id="step4_1" class="menuSteps">1 The instruction is fetched and decoded by the instruction decoder.</div>
-                <div id="step4_2" class="menuSteps">2 The instruction address is fetched via address register.</div>
-                <div id="step4_3" class="menuSteps">3 Rn is populated with the value. It is read on Bus A</div>
-                <div id="step4_4" class="menuSteps">4 The immediate is fetched</div>
-                <div id="step4_5" class="menuSteps">5 Barrel shifter is used according to the offset in the instruction.</div>
-                <div id="step4_6" class="menuSteps">6 Rn and immediate are finally subjected to ALU which computes the value by performing arithmetic and logical operations required.</div>
-                <div id="step4_7" class="menuSteps">7 Final value is stored in Rd in Register bank</div>
-                <div id="step4_8" class="menuSteps">8 Rd is populated with the value to be stored. It is read on Bus B.</div>
-                <div id="step4_9" class="menuSteps">9 It is stored in data out register.</div>
-                <div id="step4_10" class="menuSteps">10 Rn is populated with the value of address stored and the PC is returned</div>
-                <div id="step4_11" class="menuSteps">Loop into number 3</div>
+                <div id="step4_1" class="menuSteps">1 The instruction’s address is passed from address register to memory via address bus A[31:0]</div>
+                <div id="step4_2" class="menuSteps">2 The instruction is fetched from memory via data bus D[31:0]​</div>
+                <div id="step4_3" class="menuSteps">3 The instruction is decoded, and control signals are produced. The processor now knows it’s a store instruction and is aware of the registers needed.</div>
+                <div id="step4_4" class="menuSteps">4 The value in address register is incremented and copied back into r15 in the register bank. The incremented value is the address of the next instruction.​</div>
+                <div id="step4_5" class="menuSteps">5. The address of Rn is read on Bus A</div>
+                <div id="step4_6" class="menuSteps">6 The immediate or offset is fetched from data in register. It is read on bus B. </div>
+                <div id="step4_7" class="menuSteps">7 If there is any shift in the immediate it is calculated via barrel shifter. ​</div>
+                <div id="step4_8" class="menuSteps">8 Rn and offset are subjected to ALU which computes the value by performing the operation required. ​</div>
+                <div id="step4_9" class="menuSteps">9 The computed result is the address in which data is to be stored. It is copied back into address register and passed to the memory via address bus A[31:0].​</div>
+                <div id="step4_10" class="menuSteps">10 The value in Rd which is to be stored is read on bus B and placed in data out register</div>
+                <div id="step4_11" class="menuSteps">11 The value is passed to the memory via data bus D[31:0] to be stored at the address provided previously by the address bus​</div>
+                <div id="step4_12" class="menuSteps">12. the address of the next instruction which is stored in r15 (PC) is copied to address register.​</div>
+                <div id="step4_13" class="menuSteps">Loop into number 3</div>
             </div>
 
 
@@ -149,62 +155,108 @@
                 </div>
             </div>
 
-            <div class="flow_chart"><img id="flowchart_img" src="final-flow-new.png"></div>
-
-            <div class="register_bank msgPop none">
-                <p><b>Register bank </b> has sixteen 32-bit memory locations called registers (R0 to R15). R15 is the Program Counter which stores the memory address of the next instruction to be executed.</p>
-            </div>
-            <div class="ALU msgPop none">
-                <p><b>ALU</b> which performs the arithmetic and logic functions required by the instruction set.
-                </p>
-            </div>
-            <div class="barrel-shifter msgPop none">
-                <p><b>Barrel</b> shifter which can shift and rotate one operand by any number of bits.
-                </p>
-            </div>
-            <div class="address-register msgPop none">
-                <p><b>Address register</b> selects and holds memory addresses.
-                </p>
-            </div>
-            <div class="incrementer msgPop none">
-                <p><b>Incrementer</b> used to generate sequential addresses when required.
-                </p>
-            </div>
-            <div class="data-out msgPop none">
-                <p><b>Data out register</b> which hold data passing from the processor to the memory 
-                </p>
-            </div>
-            <div class="data-in msgPop none">
-                <p><b>Data in registers</b> which hold data passing from the memory to the processor
-                </p>
-            </div>
-            <div class="instruction-decode msgPop none">
-                <p><b>instruction decode and control
-                </b> decodes machine instruction into control signals for the datapath</p>
-            </div>
-            <div class="btns">
-                <div class="row r2">
-                    <form class="r2_form">
-                        <input type="button" value="Run" class="btnForm" id="btnRun" onclick="run();">
-                        <input type="button" value="Step" class="btnForm" id="btnStep" onclick="steps();">
-                        <input type="button" value="Previous" class="btnForm" id="btnBack" onclick="back();">
-                        <input type="button" value="Invisible" class="btnForm" id="btnInvisible" onclick="visibility();">
-                    </form>
+            <div class="flow_chart"><img id="flowchart_img" src="flow-chart1.svg"></div>
+            <div class="flow_chart">
+                <div class="icn-txt none">
+                    <h1> This tour demonstrates the functionality of this tool</h1>
+                    <button class="dismiss" onclick="dismiss()">Dismiss</button>
+                    <button class="next1" onclick="next(1)">Next</button>
+                    
+                </div>
+                <div class="pipeline-txt none">
+                    <h1> This diagram shows the organisation of the ARM processor. It is the 3-stage pipeline ARM organisation</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(2)">Next</button>
+                    
+                </div>
+                <div class="ARM-txt none">
+                    <h1> These boxes provide explanation about  the execution of the instruction in the ARM processor</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(3)">Next</button>
+                    
+                </div>
+                <div class="run-btn-txt none">
+                    <h1> The run button starts the instruction execution. After you press run, a stop button will appear to halt the execution</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(4)">Next</button>
+                    
+                </div>
+                <div class="step-btn-txt none ">
+                    <h1> The step button goes through the instruction execution step by step</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(5)">Next</button>
+                    
+                </div>
+                <div class="previous-btn-txt none">
+                    <h1> The previous button goes back to the preceding step</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(6)">Next</button>
+                    
+                </div>
+                <div class="invisible-btn-txt none">
+                    <h1> The invisible button removes the background diagram of the processor and displays only the parts of the processor in use. After you press invisible, a visible button will appear to display the diagram again</h1>
+                    <button class="dismiss" onclick="dismiss()">Finish the tour</button>
+                    <button class="next1" onclick="next(7)">Next</button>
+                    
+                </div>
+                <div class="information-btn-txt none">
+                    <h1> Press on the highlighted units to get further information about these components</h1>
+                    <button class="next1 finish" onclick="dismiss()">Finish the tour</button>
+                    
+                </div>
+                <div class="register_bank msgPop none">
+                    <p><b>Register bank </b> has sixteen 32-bit memory locations called registers (R0 to R15). R15 is the Program Counter which stores the memory address of the next instruction to be executed.</p>
+                </div>
+                <div class="ALU msgPop none">
+                    <p><b>ALU</b> which performs the arithmetic and logic functions required by the instruction set.
+                    </p>
+                </div>
+                <div class="barrel-shifter msgPop none">
+                    <p><b>Barrel</b> shifter which can shift and rotate one operand by any number of bits.
+                    </p>
+                </div>
+                <div class="address-register msgPop none">
+                    <p><b>Address register</b> selects and holds memory addresses.
+                    </p>
+                </div>
+                <div class="incrementer msgPop none">
+                    <p><b>Incrementer</b> used to generate sequential addresses when required.
+                    </p>
+                </div>
+                <div class="data-out msgPop none">
+                    <p><b>Data out register</b> which hold data passing from the processor to the memory 
+                    </p>
+                </div>
+                <div class="data-in msgPop none">
+                    <p><b>Data in registers</b> which hold data passing from the memory to the processor
+                    </p>
+                </div>
+                <div class="instruction-decode msgPop none">
+                    <p><b>instruction decode and control
+                    </b> decodes machine instruction into control signals for the datapath</p>
+                </div>
+                <div class="btns">
+                    <input type="button" value="Run" class="btnForm" id="btnRun" onclick="run();">
+                    <input type="button" value="Step" class="btnForm" id="btnStep" onclick="steps();">
+                    <input type="button" value="Previous" class="btnForm" id="btnBack" onclick="back();">
+                    <input type="button" value="Invisible" class="btnForm" id="btnInvisible" onclick="visibility();">
+                    <button class="btnForm"  onclick="next(0)">
+                        <img src="question-solid.svg" class="help-icn" alt="help">
+                    </button>
+                </div>
+                <div class="btns" style="display: none;">
+                    <div class="row r2">
+                        <form class="r2_form">
+                            <input type="button" value="Stop" class="btnForm" id="btnStop" onclick="stop();">
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="btns" style="display: none;">
-                <div class="row r2">
-                    <form class="r2_form">
-                        <input type="button" value="Stop" class="btnForm" id="btnStop" onclick="stop();">
-                    </form>
-                </div>
-            </div>
-
         </div>
         
 
     </div>
     
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script1.js"></script>
 </body>
 </html>
