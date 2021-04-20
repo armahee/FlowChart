@@ -42,7 +42,7 @@ a{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 40px;
+    font-size: 44px;
     top: -10vh;
     width: 100%;
     text-align: center;
@@ -52,6 +52,6 @@ a{
 .detail{
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 40px;
 }

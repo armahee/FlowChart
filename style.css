@@ -11,8 +11,8 @@ h2 {
 }
 .title{
     position: fixed;
-    left: 50%;
-    top: 4px;
+    background: white;
+    top: 0px;
     transform: translateX(-50%);
     margin: 0;
     font-size: 25px;
@@ -295,7 +295,7 @@ body {
     clip-path: polygon(14% 0%, 100% 0%, 86% 100%, 0% 100%);
     font-size: 18px;
     font-weight: 600;
-    border: 1px solid;
+    border: none;
 }
 .r_bb5 {
     position: absolute;
@@ -305,7 +305,7 @@ body {
     height: 71px;
     /* -webkit-clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0); */
     clip-path: polygon(50% 25%, 60% 1%, 100% 0, 88% 100%, 12% 100%, 0 0, 40% 0);
-    border: 1px solid;
+    border: none;
     font-size: 20px;
     font-weight: 600;
     z-index: 10;
@@ -544,7 +544,7 @@ body {
 }
 .right_bar_22 {
     position: absolute;
-    top: 571px;
+    top: 570px;
     left: 290px;
     width: 155px;
     height: 30px;
@@ -561,7 +561,7 @@ body {
 .r_bb44_arrow {
     position: absolute;
     top: 577.5px;
-    left: 272px;
+    left: 273px;
     width: 70px;
     height: 60px;
     clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
@@ -699,6 +699,11 @@ body {
     transition: 0.3s;
     color: white;
     text-shadow: 2px 2px 5px #252525;
+}
+.speed_btn{
+    position: absolute;
+    bottom: 70px;
+    left: 460px;
 }
 
 
@@ -886,6 +891,14 @@ h1{
     top: 75%;
     left: 75%;
 }
+.back {
+    position: absolute;
+    top: 75%;
+    left: 58%;
+  }
+.information-btn-txt .back {
+    left: 20%;
+  }
 .dismiss{
     position: absolute;
     top: 75%;
@@ -982,12 +995,14 @@ h1{
     width: 500px;
     text-align: center;
     position: absolute;
-    bottom: -630px;
-    left: -500px;
+    bottom: -1128px;
+    left: 540px;
     background: #f1ededf0	;
     box-shadow: 3px 2px 15px #252525;
     z-index: 2000;
 }
+
+/* random */
 
 
 
