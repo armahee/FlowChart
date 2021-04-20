@@ -181,6 +181,7 @@ function tour_back(step_i){
 		for (var i = 0; i < hideLis.length; i++) {
 			hideLis[i].classList.remove('hide');
 		}
+		document.getElementById('btnInvisible').classList.remove('hideImportant');
 	}
 }
 function dismiss() {
