@@ -337,37 +337,37 @@ async function steps() {
 	}
 }
 function step_1(i) {
-	var elem = document.getElementsByClassName('upper_arrow_f')[0];
-	var epos = 8, pos = epos + 50;
-	elem.style.top = pos + 'px';
-	elem.classList.remove('hide');
 	var elem1 = document.getElementsByClassName('r_bb1')[0];
 	var epos1 = 100, pos1 = 0;
 	elem1.style.opacity = pos1 + '%';
 	elem1.classList.remove('hide');
-	var id1 = null;
-	var id = setInterval(frame, 5);
-	function frame() {
-		if(stepNum < i){
-			elem.classList.add('hide');
-		}
-		if (pos == epos) {
-			id1 = setInterval(frame1, 1);
-			clearInterval(id);
-		} else {
-			pos--; 
-			elem.style.top = pos + "px";
-		}
-	}
+	var elem = document.getElementsByClassName('upper_arrow_f')[0];
+	var epos = 8, pos = epos + 50;
+	elem.style.top = pos + 'px';
+	var id = null;
+	var id1 = setInterval(frame1, 5);
 	function frame1() {
 		if(stepNum < i){
 			elem1.classList.add('hide');
 		}
 		if (pos1 == epos1) {
+			elem.classList.remove('hide');
+			id = setInterval(frame, 5);
 			clearInterval(id1);
 		} else {
-			pos1+=5; 
+			pos1+=2; 
 			elem1.style.opacity = pos1 + "%";
+		}
+	}
+	function frame() {
+		if(stepNum < i){
+			elem.classList.add('hide');
+		}
+		if (pos == epos) {
+			clearInterval(id);
+		} else {
+			pos--; 
+			elem.style.top = pos + "px";
 		}
 	}
 }
@@ -1669,35 +1669,35 @@ function back() {
 	}
 }
 function back_1(i) {
+	var elem = document.getElementsByClassName('upper_arrow_f')[0];
+	var epos = 58, pos = 8;
+	var id = setInterval(frame, 5);
 	var elem1 = document.getElementsByClassName('r_bb1')[0];
 	var epos1 = 0, pos1 = 100;
 	var id1 = null;
-	var elem = document.getElementsByClassName('upper_arrow_f')[0];
-	var epos = 58, pos = 8;
-	var id1 = setInterval(frame1, 5);
-	function frame1() {
-		if (pos1 == epos1) {
-			elem1.classList.add('hide');
-			if(stepNum > i){
-				elem1.classList.remove('hide');
-			}
-			id = setInterval(frame, 1);
-			clearInterval(id1);
-		} else {
-			pos1-=5; 
-			elem1.style.opacity = pos1 + "%";
-		}
-	}
 	function frame() {
 		if (pos == epos) {
 			elem.classList.add('hide');
 			if(stepNum > i){
 				elem.classList.remove('hide');
 			}
+			id1 = setInterval(frame1, 5);
 			clearInterval(id);
 		} else {
 			pos++; 
 			elem.style.top = pos + "px";
+		}
+	}
+	function frame1() {
+		if (pos1 == epos1) {
+			elem1.classList.add('hide');
+			if(stepNum > i){
+				elem1.classList.remove('hide');
+			}
+			clearInterval(id1);
+		} else {
+			pos1-=2; 
+			elem1.style.opacity = pos1 + "%";
 		}
 	}
 }
@@ -2631,7 +2631,6 @@ function back_11(i) {
 
 		var elem9 = document.getElementsByClassName('r_bb4_4')[0];
 		var epos9 = 0, pos9 = 100;
-		var id7 = null;
 
 		var elem10 = document.getElementsByClassName('r_bb44_arrow')[0];
 		var epos10 = 527, pos10 = 577;//height = '577.5px';
@@ -2767,7 +2766,7 @@ function back_11(i) {
 				if(stepNum > i){
 					elem.classList.add('BgDpPink');
 				}
-				var id7 = setInterval(frame7,5);
+				id7 = setInterval(frame7, 5);
 				clearInterval(id);
 			} else {
 				pos--; 
