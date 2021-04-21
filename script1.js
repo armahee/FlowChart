@@ -1378,7 +1378,6 @@ function step_11(i) {
 
 		var elem6 = document.getElementsByClassName('r_bb4_arrow')[0];
 		var epos6 = 703, pos6 = epos6 - 50;
-		elem6.classList.add('BgDpPink');
 		var id6 = null;
 		var elem7 = document.getElementsByClassName('r_bb5')[0];
 		var epos7 = 100, pos7 = 0;
@@ -1486,6 +1485,7 @@ function step_11(i) {
 				elem5.classList.remove('BgDpPink');
 			}
 			if(epos5 == pos5){
+				elem6.classList.add('BgDpPink');
 				elem6.style.top = pos6 + 'px';
 				id6 = setInterval(frame6, 5);
 				clearInterval(id5);
