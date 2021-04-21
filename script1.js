@@ -344,6 +344,10 @@ function step_1(i) {
 	var elem = document.getElementsByClassName('upper_arrow_f')[0];
 	var epos = 8, pos = epos + 50;
 	elem.style.top = pos + 'px';
+	var elem_1 = document.getElementsByClassName('text_top')[0];
+	var epos_1 = 100, pos_1 = 0;
+	elem_1.style.opacity = pos_1 + '%';
+	elem_1.classList.remove('hide');
 	var id = null;
 	var id1 = setInterval(frame1, 5);
 	function frame1() {
@@ -362,12 +366,15 @@ function step_1(i) {
 	function frame() {
 		if(stepNum < i){
 			elem.classList.add('hide');
+			elem_1.classList.add('hide');
 		}
 		if (pos == epos) {
 			clearInterval(id);
 		} else {
 			pos--; 
 			elem.style.top = pos + "px";
+			pos_1 += 2;
+			elem_1.style.opacity = pos_1 + '%';
 		}
 	}
 }
@@ -376,6 +383,10 @@ function step_2(i) {
 	var epos = 1024, pos = epos + 50;
 	elem.style.top = pos + 'px';
 	elem.classList.remove('hide');
+	var elem_1 = document.getElementsByClassName('text_bottom')[0];
+	var epos_1 = 100, pos_1 = 0;
+	elem_1.style.opacity = pos_1 + '%';
+	elem_1.classList.remove('hide');
 	var elem1 = document.getElementsByClassName('r_bb7')[0];
 	var epos1 = 100, pos1 = 0;
 	elem1.style.opacity = pos1 + '%';
@@ -385,6 +396,7 @@ function step_2(i) {
 	function frame() {
 		if(stepNum < i){
 			elem.classList.add('hide');
+			elem_1.classList.add('hide');
 		}
 		if (pos == epos) {
 			id1 = setInterval(frame1, 1);
@@ -392,6 +404,8 @@ function step_2(i) {
 		} else {
 			pos--; 
 			elem.style.top = pos + "px";
+			pos_1 += 2;
+			elem_1.style.opacity = pos_1 + '%';
 		}
 	}
 	function frame1() {
@@ -422,9 +436,13 @@ function step_3(i) {
 	var elem5 = document.getElementsByClassName('row_4_arrow')[0];
 	var epos5 = 3, pos5 = epos5 + 50;
 	elem5.style.top = pos5 + 'px';
-	var id2 = setInterval(frame2, 5);
+	var elem5_1 = document.getElementsByClassName('Control')[0];
+	var epos5_1 = 100, pos5_1 = 0;
+	elem5_1.style.opacity = pos5_1 + '%';
+	elem5_1.classList.remove('hide');
 	var id4 = null;
 	var id3 = null;
+	var id2 = setInterval(frame2, 5);
 	function frame2() {
 		if(stepNum < i){
 			elem2.classList.add('hide');
@@ -462,6 +480,8 @@ function step_3(i) {
 		} else {
 			pos5--; 
 			elem5.style.top = pos5 + "px";
+			pos5_1 += 2;
+			elem5_1.style.opacity = pos5_1 + '%';
 		}
 	}
 }
@@ -707,7 +727,7 @@ function step_6(i) {
 		elem3.classList.remove('hide');
 		var id3 = null;
 		var elem4 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos4 = 577, pos4 = epos4 - 50;//height = '577.5px';
+		var epos4 = 576, pos4 = epos4 - 50;//top = '576px';
 		elem4.style.top = pos4 + 'px';
 		var id4 = null;
 		function frame() {
@@ -799,7 +819,7 @@ function step_6(i) {
 		elem3.classList.remove('hide');
 		var id3 = null;
 		var elem4 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos4 = 577, pos4 = epos4 - 50;//height = '577.5px';
+		var epos4 = 576, pos4 = epos4 - 50;//top = '576px';
 		elem4.style.top = pos4 + 'px';
 		var id4 = null;
 		function frame() {
@@ -1370,7 +1390,7 @@ function step_11(i) {
 		elem3.classList.remove('hide');
 		var id3 = null;
 		var elem4 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos4 = 577, pos4 = epos4 - 50;//height = '577.5px';
+		var epos4 = 576, pos4 = epos4 - 50;//top = '576px';
 		var id4 = null;
 		var elem5 = document.getElementsByClassName('r_bb4_4')[0];
 		var epos5 = 100, pos5 = 0;
@@ -1671,6 +1691,8 @@ function back() {
 function back_1(i) {
 	var elem = document.getElementsByClassName('upper_arrow_f')[0];
 	var epos = 58, pos = 8;
+	var elem_1 = document.getElementsByClassName('text_top')[0];
+	var epos_1 = 0, pos_1 = 100;
 	var id = setInterval(frame, 5);
 	var elem1 = document.getElementsByClassName('r_bb1')[0];
 	var epos1 = 0, pos1 = 100;
@@ -1678,14 +1700,18 @@ function back_1(i) {
 	function frame() {
 		if (pos == epos) {
 			elem.classList.add('hide');
+			elem_1.classList.add('hide');
 			if(stepNum > i){
 				elem.classList.remove('hide');
+				elem_1.classList.remove('hide');
 			}
 			id1 = setInterval(frame1, 5);
 			clearInterval(id);
 		} else {
 			pos++; 
 			elem.style.top = pos + "px";
+			pos_1 -= 2;
+			elem_1.style.opacity = pos_1 + '%';
 		}
 	}
 	function frame1() {
@@ -1707,6 +1733,8 @@ function back_2(i) {
 	var id1 = id1 = setInterval(frame1, 1);
 	var elem = document.getElementsByClassName('arrow_dwn1')[0];
 	var epos = 1074, pos = 1024;
+	var elem_1 = document.getElementsByClassName('text_bottom')[0];
+	var epos_1 = 0, pos_1 = 100;
 	var id = null;
 	function frame1() {
 		if (pos1 == epos1) {
@@ -1724,19 +1752,25 @@ function back_2(i) {
 	function frame() {
 		if (pos == epos) {
 			elem.classList.add('hide');
+			elem_1.classList.add('hide');
 			if(stepNum > i){
 				elem.classList.remove('hide');
+				elem_1.classList.remove('hide');
 			}
 			clearInterval(id);
 		} else {
 			pos++; 
 			elem.style.top = pos + "px";
+			pos_1 -= 2;
+			elem_1.style.opacity = pos_1 + '%';
 		}
 	}
 }
 function back_3(i) {
 	var elem5 = document.getElementsByClassName('row_4_arrow')[0];
 	var epos5 = 53, pos5 = 3;
+	var elem5_1 = document.getElementsByClassName('Control')[0];
+	var epos5_1 = 0, pos5_1 = 100;
 	var id4 = setInterval(frame4, 5);
 	var elem3 = document.getElementsByClassName('r4')[0];
 	var epos3 = 0, pos3 = 100;
@@ -1757,6 +1791,8 @@ function back_3(i) {
 		} else {
 			pos5++; 
 			elem5.style.top = pos5 + "px";
+			pos5_1 -= 2;
+			elem5_1.style.opacity = pos5_1 + '%';
 		}
 	}
 	function frame3() {
@@ -1970,7 +2006,7 @@ function back_6(i) {
 		var epos3 = 445, pos3 = 290;
 		var epos3_1 = 0, pos3_1 = 155;
 		var elem4 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos4 = 527, pos4 = 577;//height = '577.5px';
+		var epos4 = 526, pos4 = 576;//top = '576px';
 		var elem5 = document.getElementsByClassName('r_bb4_4')[0];
 		var epos5 = 0, pos5 = 100;
 		var id = null;
@@ -2071,7 +2107,7 @@ function back_6(i) {
 		var epos3 = 445, pos3 = 290;
 		var epos3_1 = 0, pos3_1 = 155;
 		var elem4 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos4 = 527, pos4 = 577;//height = '577.5px';
+		var epos4 = 526, pos4 = 576;//height = '576px';
 		var elem5 = document.getElementsByClassName('r_bb4_4')[0];
 		var epos5 = 0, pos5 = 100;
 		var id = null;
@@ -2633,7 +2669,7 @@ function back_11(i) {
 		var epos9 = 0, pos9 = 100;
 
 		var elem10 = document.getElementsByClassName('r_bb44_arrow')[0];
-		var epos10 = 527, pos10 = 577;//height = '577.5px';
+		var epos10 = 526, pos10 = 576;//height = '576px';
 		var elem11 = document.getElementsByClassName('right_bar_22_overlap')[0];
 		var epos11 = 445, pos11 = 290;
 		var epos11_1 = 0, pos11_1 = 155;
