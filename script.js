@@ -1,7 +1,7 @@
 var stepNum = 0;
 var isRunning = false;
 
-var cSpeed = 0;
+var cSpeed = 1;
 function speed(i){
 	var speed_btn = document.getElementsByClassName('speed_btn')[0];
 	var btns = document.getElementsByClassName('btnForm');
@@ -21,7 +21,7 @@ function speed(i){
 	}
 	if(i == 1){
 		btns[6].classList.add('BgBlue');
-		cSpeed = 1000;
+		cSpeed = 1.5;
 	}
 	else if(i == 2){
 		btns[7].classList.add('BgBlue');
@@ -29,7 +29,7 @@ function speed(i){
 	}
 	else if(i == 3){
 		btns[8].classList.add('BgBlue');
-		cSpeed = -1000;
+		cSpeed = 0.75;
 	}
 }
 
@@ -365,7 +365,7 @@ async function run() {
 							document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 							document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 							document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
-							await sleep(readingDelay[menuNum][i+1]+cSpeed);
+							await sleep(readingDelay[menuNum][i+1]*cSpeed);
 							window['step_'+(i+1)](i);
 						}
 					}
@@ -407,7 +407,7 @@ async function steps() {
 				document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 				document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 				document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
-				await sleep(readingDelay[menuNum][i+1]+cSpeed);
+				await sleep(readingDelay[menuNum][i+1]*cSpeed);
 				window['step_'+(i+1)](i+1);
 			}
 			break;
