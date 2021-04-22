@@ -335,6 +335,9 @@ async function run() {
 						if(i > 2){
 							window.scrollTo(0,100+((i-3)*100));
 						}
+						else{
+							window.scrollTo(0,0);
+						}
 						if(i && i < stepFinder[menuNum].length-1){
 							document.getElementById('step'+(menuNum+1)+'_'+i).classList.remove('BgPink');
 						}
