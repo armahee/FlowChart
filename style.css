@@ -36,7 +36,7 @@ h2 {
 
 body {
   margin-top: 40px;
-  margin-left: 25%;
+  margin-left: 22%;
   max-height: 100vh;
   overflow-x: hidden;
 }
@@ -62,9 +62,9 @@ body {
   padding: 20px;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  width: 35%;
+  width: 37%;
 }
 .msgBoxBg {
   position: relative;
