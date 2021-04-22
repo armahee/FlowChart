@@ -44,8 +44,8 @@
             <div class="flow_chart animatable_chart">
                 <div class="flow_chart_three nextStep">
                     <div class="flow_chart_nine_content">
-                        <span class="text_bottom stepone hide">D[31:0]</span>
-                        <div class="Control stepone hide">Control</div>
+                        <span class="text_bottom stepone hide hideImportant" id="d31" onclick="msgPop(this)">D[31:0]</span>
+                        <div class="Control stepone hide hideImportant">Control</div>
                         <span class="row_4_arrow stepone BgPink hide"></span>
                         <div class="row r4 stepone BgPink hide" id="instruction-decode" onclick="msgPop(this)">
 
@@ -62,7 +62,7 @@
                 </div>
                 <div class="flow_chart_one">
                     <div class="flow_chart_one_content">
-                        <span class="text_top steptwo hide">A[31:0]</span>
+                        <span class="text_top steptwo hide hideImportant" id="a31" onclick="msgPop(this)">A[31:0]</span>
                         <span class="upper_arrow_f steptwo BgPink hide"></span>
 
                         <input type="button" value="Address Register" class="r_bb1 steptwo stepsix BgPink hide" id="address-register" onclick="msgPop(this)">
@@ -114,22 +114,22 @@
                         <span class="arrow_dwn stepnone BgPink hide">
                         </span>
                     </div>
-                </div>
-                <div class="flow_chart_1_content">
-                    <div class="row r5">
-                        <!-- <div class="clip_4">
-                        </div> -->
-                        <span class="right_bar steptwo BgPink hide"></span>
-
-                        <div class="clip_4in steptwo stepsix BgPink hide">
-                        </div>
-                        <div class="clip_4innnn stepseven BgDpPink hide">
-                        </div>
-                        <span class="right_bar_1 steptwo stepsix BgPink hide"><span class="stepsix hide">P C</span></span>
-                        <div class="clip_4inn stepfour BgPink hide">
-                        </div>
-                        <div class="clip_4innn stepfour BgPink hide">
-                            <p class="stepfour hide">B<br><br> B <br> U <br> S</p>
+                 </div>
+                 <div class="flow_chart_1_content">
+                     <div class="row r5">
+                         <!-- <div class="clip_4">
+                         </div> -->
+                         <span class="right_bar steptwo BgPink hide"></span>
+  
+                         <div class="clip_4in steptwo stepsix BgPink hide">
+                         </div>
+                         <div class="clip_4innnn stepseven BgDpPink hide">
+                         </div>
+                         <span class="right_bar_1 steptwo stepsix BgPink hide"><span class="stepsix hide">P C</span></span>
+                         <div class="clip_4inn stepfour BgPink hide">
+                         </div>
+                       <div class="clip_4innn stepfour BgPink hide">
+                             <p class="stepfour hide">B<br><br> B <br> U <br> S</p>
                         </div>
                         <div class="clip_4innn_overlap stepfour BgPink hide">
                             <p class="stepfour hide">B<br><br> B <br> U <br> S</p>
@@ -155,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="flow_chart"><img id="flowchart_img" src="flow-chart1.svg"></div>
+            <div class="flow_chart"><img id="flowchart_img" src="flow-chart.svg"></div>
             <div class="flow_chart">
                 <div class="icn-txt none">
                     <h1> This tour demonstrates the functionality of this tool</h1>
@@ -249,6 +249,14 @@
                     <p><b>instruction decode and control
                     </b> decodes machine instruction into control signals for the datapath</p>
                 </div>
+                <div class="a31 msgPop none">
+                    <p><b>Addrress Bus
+                    </b> Address bus is a one-way path from processor to memory which specifies the location of the memory element being accessed</p>
+                </div>
+                <div class="d31 msgPop none">
+                    <p><b>Data Bus
+                    </b> Data bus is a two-way path between processor and memory which transfers data</p>
+                </div>
                 <div class="btns">
                     <input type="button" value="Run" class="btnForm" id="btnRun" onclick="run();">
                     <input type="button" value="Step" class="btnForm" id="btnStep" onclick="steps();">
@@ -277,6 +285,6 @@
 
     </div>
     
-    <script type="text/javascript" src="script1.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
