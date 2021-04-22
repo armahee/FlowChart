@@ -816,6 +816,9 @@ body {
   color: white;
   text-shadow: 2px 2px 5px #252525;
 }
+.speed {
+  margin-right: 10px;
+}
 .speed_btn {
   display: grid;
   position: absolute;

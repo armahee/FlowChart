@@ -1,7 +1,7 @@
 var stepNum = 0;
 var isRunning = false;
 
-var cSpeed = 6400;
+var cSpeed = 0;
 function speed(i){
 	var speed_btn = document.getElementsByClassName('speed_btn')[0];
 	var btns = document.getElementsByClassName('btnForm');
@@ -21,15 +21,15 @@ function speed(i){
 	}
 	if(i == 1){
 		btns[6].classList.add('BgBlue');
-		cSpeed = 9600;
+		cSpeed = 1000;
 	}
 	else if(i == 2){
 		btns[7].classList.add('BgBlue');
-		cSpeed = 6400;
+		cSpeed = 0;
 	}
 	else if(i == 3){
 		btns[8].classList.add('BgBlue');
-		cSpeed = 4800;
+		cSpeed = -1000;
 	}
 }
 
@@ -290,6 +290,22 @@ var stepFinder = [
 	['flow_chart_three','arrow_dwn1','upper_arrow_f','upper_arrow','bank_arrow_2','StraitLine','r_bb4_4','r_bb5','r_bb1','alu_arrow','r_bb6','lower_arrow1','arrow_dwn10'],
 	['flow_chart_three','arrow_dwn1','upper_arrow_f','upper_arrow','bank_arrow_2','StraitLine','r_bb4_4','r_bb5','r_bb1','alu_arrow','r_bb6','lower_arrow1','arrow_dwn10']
 ];
+var stepDelay = [
+	[1500,1500,1500,1500,3000,1500,2500,1500,1500,1500],
+	[1500,1500,1500,1500,3000,1500,2700,1500,1500,1500],
+	[1500,1500,1500,1500,3000,1500,1500,1500,1500,2500,3000,2000,2000],
+	[1500,1500,1500,1500,3000,1500,1500,1500,1500,2500,3000,2000,2000],
+	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,1500,3500,1500],
+	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,1500,3500,1500]
+];
+var readingDelay = [
+	[1500,3200,2200,5000,6000,2200,2200,2800,2200,2200],
+	[1500,3200,2200,5000,6000,2200,3000,2800,2200,2200],
+	[1500,3200,2200,5000,5400,2200,3000,2800,3400,6000,4200,4800,3000],
+	[1500,3200,2200,5000,5400,2200,3000,2800,3400,6000,4200,4800,3000],
+	[1500,3200,2200,5000,5400,2200,3000,3000,3400,6200,3600,2200,3000],
+	[1500,3200,2200,5000,5400,2200,3000,3000,3400,6200,3600,2200,3000]
+];
 function stop() {
 	document.getElementsByClassName('btns')[1].style.display = 'none';
 	isRunning = false;
@@ -332,10 +348,13 @@ async function run() {
 						break;
 					}
 					if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
-						if(i > 2){
+						if(i > 2 && menuNum > 1){
 							window.scrollTo(0,100+((i-3)*100));
 						}
-						else{
+						else if(menuNum > 1){
+							window.scrollTo(0,0);
+						}
+						else if(!i){
 							window.scrollTo(0,0);
 						}
 						if(i && i < stepFinder[menuNum].length-1){
@@ -346,12 +365,12 @@ async function run() {
 							document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 							document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 							document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
-							await sleep(cSpeed);
+							await sleep(readingDelay[menuNum][i+1]+cSpeed);
 							window['step_'+(i+1)](i);
 						}
 					}
 					if(i < stepFinder[menuNum].length-2){
-						await sleep(cSpeed);
+						await sleep(stepDelay[menuNum][i+1]);
 					}
 					if(!isRunning){
 						document.getElementsByClassName('btns')[1].style.display = 'none';
@@ -371,10 +390,13 @@ async function run() {
 async function steps() {
 	for (var i = 0; i < stepFinder[menuNum].length; i++) {
 		if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
-			if(i > 2){
+			if(i > 2 && menuNum > 1){
 				window.scrollTo(0,100+((i-3)*100));
 			}
-			else{
+			else if(menuNum > 1){
+				window.scrollTo(0,0);
+			}
+			else if(!i){
 				window.scrollTo(0,0);
 			}
 			if(i && i < stepFinder[menuNum].length-1){
@@ -385,7 +407,7 @@ async function steps() {
 				document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.remove('nextStep');
 				document.getElementsByClassName(stepFinder[menuNum][i+1])[0].classList.add('nextStep');
 				document.getElementById('step'+(menuNum+1)+'_'+(i+1)).classList.add('BgPink');
-				await sleep(cSpeed);
+				await sleep(readingDelay[menuNum][i+1]+cSpeed);
 				window['step_'+(i+1)](i+1);
 			}
 			break;
@@ -396,6 +418,7 @@ function step_1(i) {
 	var elem1 = document.getElementsByClassName('r_bb1')[0];
 	var epos1 = 100, pos1 = 0;
 	elem1.style.opacity = pos1 + '%';
+	elem1.classList.remove('BgDpPink');
 	elem1.classList.remove('hide');
 	var elem = document.getElementsByClassName('upper_arrow_f')[0];
 	var epos = 8, pos = epos + 50;
@@ -1730,10 +1753,10 @@ function step_12(i) {
 function back() {
 	for (var i = 0; i < stepFinder[menuNum].length; i++) {
 		if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
-			if(i < 9){
+			if(i < 9 && menuNum > 1){
 				window.scrollTo(0,0+((i-3)*100));
 			}
-			else{
+			else if(menuNum > 1){
 				window.scrollTo(0,2000);
 			}
 			if(i){
