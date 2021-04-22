@@ -840,9 +840,17 @@ body {
   display: grid;
   position: absolute;
   bottom: 84px;
-  left: 645px;
+  left: 656px;
 }
 .speed_btn .btnForm {
+  margin-bottom: -22px;
+  font-size: 16px;
+  /* border-radius: 2px; */
+  border: 1px solid #c7c7c7f2;
+  border: none;
+  background: #edf2f3d1;
+}
+.speed_btn .btnForm:nth-child(3) {
   margin-bottom: -10px;
 }
 
