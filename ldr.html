@@ -22,18 +22,18 @@
         <div class="accordion_section">
             <div class="msgBoxBg"></div>
             <div id="messageBox" class="">
-                <div id="step5_1" class="menuSteps">1 The instruction’s address is passed from address register to memory via address bus A[31:0]</div>
-                <div id="step5_2" class="menuSteps">2 The instruction is fetched from memory via data bus D[31:0]​</div>
-                <div id="step5_3" class="menuSteps">3 The instruction is decoded, and control signals are produced. The processor now knows it’s a load instruction and is aware of the registers needed.</div>
-                <div id="step5_4" class="menuSteps">4 The value in address register is incremented and copied back into r15 in the register bank. The incremented value is the address of the next instruction.</div>
-                <div id="step5_5" class="menuSteps">5 The address of Rn is read on Bus A</div>
-                <div id="step5_6" class="menuSteps">6 The immediate or offset is fetched from data in register. It is read on bus B.</div>
-                <div id="step5_7" class="menuSteps">7 If there is any shift in the immediate it is calculated via barrel shifter.</div>
-                <div id="step5_8" class="menuSteps">8 Rn and offset are subjected to ALU which computes the value by performing the operation required.</div>
-                <div id="step5_9" class="menuSteps">9 The computed result is the address in which data is to be loaded from. It is copied back into address register and passed to the memory via address bus A[31:0].</div>
-                <div id="step5_10" class="menuSteps">10 The data is loaded via data bus D[31:0] from the address provided previously by the address bus</div>
-                <div id="step5_11" class="menuSteps">11 The loaded data is stored in Rd.</div>
-                <div id="step5_12" class="menuSteps">12 the address of the next instruction which is stored in r15 (PC) is copied to address register.</div>
+                <div id="step5_1" class="menuSteps">1. The instruction memory address is passed from address register to memory via address bus A[31:0]</div>
+                <div id="step5_2" class="menuSteps">2. The instruction is fetched from memory via data bus D[31:0]​</div>
+                <div id="step5_3" class="menuSteps">3. The instruction is decoded, and control signals are produced. The processor now knows it’s a load instruction and is aware of the registers needed.</div>
+                <div id="step5_4" class="menuSteps">4. The value in address register is incremented and copied back into r15 in the register bank. The incremented value is the address of the next instruction.</div>
+                <div id="step5_5" class="menuSteps">5. The value stored in Rn is read on bus A.</div>
+                <div id="step5_6" class="menuSteps">6. The immediate or offset is fetched from data in register. It is read on bus B.</div>
+                <div id="step5_7" class="menuSteps">7. If there is any shift in the immediate it is calculated via barrel shifter.</div>
+                <div id="step5_8" class="menuSteps">8. Rn and offset are subjected to ALU which computes the value by performing the operation required.</div>
+                <div id="step5_9" class="menuSteps">9. The computed result is the address in which data is to be loaded from. It is copied back into address register and passed to the memory via address bus A[31:0].</div>
+                <div id="step5_10" class="menuSteps">10. The data is loaded via data bus D[31:0] from the address provided previously by the address bus​</div>
+                <div id="step5_11" class="menuSteps">11. The loaded data is stored in Rd.</div>
+                <div id="step5_12" class="menuSteps">12. the address of the next instruction which is stored in r15 (PC) is copied to address register.</div>
             </div>
         </div>
 

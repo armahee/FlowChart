@@ -21,14 +21,14 @@
         <div class="accordion_section">
             <div class="msgBoxBg"></div>
             <div id="messageBox" class="">
-                <div id="step1_1" class="menuSteps">1. The instruction’s address is passed from address register to memory via address bus A[31:0]</div>
+                <div id="step1_1" class="menuSteps">1. The instruction memory address is passed from address register to memory via address bus A[31:0]</div>
                 <div id="step1_2" class="menuSteps">2. The instruction is fetched from memory via data bus D[31:0]</div>
                 <div id="step1_3" class="menuSteps">3. The instruction is decoded, and control signals are produced. The processor now knows it’s an add instruction and is aware of the registers needed.</div>
-                <div id="step1_4" class="menuSteps">4. The value in the address register is incremented and copied back into the address register and r15 in the register bank. The incremented value is the address of the next instruction.</div>
+                <div id="step1_4" class="menuSteps">4. The value in address register is incremented and copied back into address register and r15 in the register bank. The incremented value is the address of the next instruction.</div>
                 <div id="step1_5" class="menuSteps">5. The value stored in Rn is read on bus A.</div>
                 <div id="step1_6" class="menuSteps">6. The value stored in Rm is read on bus B.</div>
                 <div id="step1_7" class="menuSteps">7. If there is any shift in Rm it is calculated via barrel shifter.</div>
-                <div id="step1_8" class="menuSteps">8. Rn and Rm are added and the result is computed.</div>
+                <div id="step1_8" class="menuSteps">8. Rn and Rm are added, and the result is computed.</div>
                 <div id="step1_9" class="menuSteps">9. The result is stored in Rd in the register bank</div>
             </div>
         </div>
