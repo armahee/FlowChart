@@ -332,6 +332,9 @@ async function run() {
 						break;
 					}
 					if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
+						if(i > 2){
+							window.scrollTo(0,100+((i-3)*100));
+						}
 						if(i && i < stepFinder[menuNum].length-1){
 							document.getElementById('step'+(menuNum+1)+'_'+i).classList.remove('BgPink');
 						}
@@ -365,6 +368,12 @@ async function run() {
 async function steps() {
 	for (var i = 0; i < stepFinder[menuNum].length; i++) {
 		if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
+			if(i > 2){
+				window.scrollTo(0,100+((i-3)*100));
+			}
+			else{
+				window.scrollTo(0,0);
+			}
 			if(i && i < stepFinder[menuNum].length-1){
 				document.getElementById('step'+(menuNum+1)+'_'+i).classList.remove('BgPink');
 			}
@@ -1718,6 +1727,12 @@ function step_12(i) {
 function back() {
 	for (var i = 0; i < stepFinder[menuNum].length; i++) {
 		if(document.getElementsByClassName(stepFinder[menuNum][i])[0].classList.contains('nextStep')){
+			if(i < 9){
+				window.scrollTo(0,0+((i-3)*100));
+			}
+			else{
+				window.scrollTo(0,2000);
+			}
 			if(i){
 				stepNum--;
 				document.getElementById('step'+(menuNum+1)+'_'+i).classList.remove('BgPink');
