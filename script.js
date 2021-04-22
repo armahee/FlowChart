@@ -29,7 +29,7 @@ function speed(i){
 	}
 	else if(i == 3){
 		btns[8].classList.add('BgBlue');
-		cSpeed = 0.75;
+		cSpeed = 0.66;
 	}
 }
 
