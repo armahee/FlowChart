@@ -293,8 +293,8 @@ var stepFinder = [
 var stepDelay = [
 	[1500,1500,1500,1500,3000,1500,2500,1500,1500,1500],
 	[1500,1500,1500,1500,3000,1500,2700,1500,1500,1500],
-	[1500,1500,1500,1500,3000,1500,1500,1500,1500,2500,3000,2000,2000],
-	[1500,1500,1500,1500,3000,1500,1500,1500,1500,2500,3000,2000,2000],
+	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,3000,2000,2000],
+	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,3000,2000,2000],
 	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,1500,3500,1500],
 	[1500,1500,1500,1500,3000,1500,2000,1500,1500,2500,1500,3500,1500]
 ];
@@ -423,6 +423,7 @@ function step_1(i) {
 	var elem = document.getElementsByClassName('upper_arrow_f')[0];
 	var epos = 8, pos = epos + 50;
 	elem.style.top = pos + 'px';
+	elem.classList.remove('BgDpPink');
 	var elem_1 = document.getElementsByClassName('text_top')[0];
 	var epos_1 = 100, pos_1 = 0;
 	elem_1.style.opacity = pos_1 + '%';
@@ -750,7 +751,7 @@ function step_5(i) {
 	elem3.style.opacity = pos + '%';
 	elem3.classList.remove('hide');
 	var id = null;
-	var id1 = setInterval(frame1, 0.001);
+	var id1 = setInterval(frame1, 5);
 	function frame1() {
 		if(stepNum < i){
 			elem1.classList.add('hide');
@@ -764,7 +765,7 @@ function step_5(i) {
 		} else {
 			pos1+=5; 
 			if(pos3 < epos3){
-				pos3+=3;
+				pos3+=4;
 				elem3.style.opacity = pos3 + '%';
 			}
 			elem1.style.height = pos1 + "px";
@@ -2050,10 +2051,10 @@ function back_5(i) {
 			if(stepNum > i){
 				elem.classList.remove('hide');
 			}
-			id1 = setInterval(frame1, 0.001);
+			id1 = setInterval(frame1, 5);
 			clearInterval(id);
 		} else {
-			pos--; 
+			pos-=2; 
 			elem.style.top = pos + "px";
 		}
 	}
@@ -2071,7 +2072,7 @@ function back_5(i) {
 			clearInterval(id1);
 		} else {
 			pos1-=5; 
-			if(pos3 < epos3){
+			if(pos3 > epos3){
 				pos3-=3;
 				elem3.style.opacity = pos3 + '%';
 			}
