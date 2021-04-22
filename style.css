@@ -12,12 +12,14 @@ h2 {
 .title {
   position: fixed;
   background: white;
-  top: 0px;
-  transform: translateX(-50%);
+  top: 0;
+  padding-top: 1%;
+  left: 2%;
+  //transform: translateX(-50%);
   margin: 0;
   font-size: 25px;
   width: 100%;
-  text-align: center;
+  //text-align: center;
   z-index: 10;
 }
 
