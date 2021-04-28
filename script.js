@@ -25,7 +25,7 @@ function speed(i){
 	}
 	else if(i == 2){
 		btns[7].classList.add('BgBlue');
-		cSpeed = 0;
+		cSpeed = 1;
 	}
 	else if(i == 3){
 		btns[8].classList.add('BgBlue');
